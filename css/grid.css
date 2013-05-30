@@ -1,19 +1,81 @@
-*, *:before, *:after {
-  box-sizing: border-box;
+/**
+ * A simple grid system with 6 columns.
+ * Columns can be nested to achieve greater flexibility.
+ *
+ * Includes helper classes for alignment at the bottom.
+ */
+
+.row {
+  clear: both;
+  overflow: hidden;
 }
 
-body {
-  color: #444;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
+.col1of2,
+.col1of3, .col2of3,
+.col1of4, .col2of4, .col3of4,
+.col1of5, .col2of5, .col3of5, .col4of5,
+.col1of6, .col2of6, .col3of6, .col4of6, .col5of6 {
+  float: left;
 }
 
-#app-container {
-  border: 1px solid #ccc;
-  height: 1536px;
-  margin-top: -374px;
-  margin-left: -512px;
-  position: absolute; top: 50%; left: 50%;
-  width: 2048px;
+.col1of1 {
+  float: left;
+  width: 2032px;
+}
+
+.col1of2 {
+  float: left;
+  width: 1012px;
+}
+
+.col1of4 {
+  float: left;
+  width: 502px;
+}
+
+.col3of4 {
+  float: left;
+  width: 1522px;
+  border: 1px solid black;
+}
+
+.col1of8 {
+  width: 247px;
+}
+
+.colof8a{
+  width: 374px;
+}
+
+.colof8b{
+  width: 120px;
+}
+
+
+
+
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.by-left {
+  text-align: left;
+}
+
+.by-right {
+  text-align: right;
+}
+
+.by-center {
+  text-align: center;
 }
