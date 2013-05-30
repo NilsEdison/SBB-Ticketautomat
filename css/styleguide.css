@@ -153,3 +153,7 @@
   padding-bottom: 0px;
   line-height: 1;
 }
+
+#back{
+  background: url('Icons/back.png');
+}
