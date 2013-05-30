@@ -40,14 +40,17 @@
 }
 
 .col1of8 {
+  float: left;
   width: 247px;
 }
 
 .colof8a{
+  float: left;
   width: 374px;
 }
 
 .colof8b{
+  float: left;
   width: 120px;
 }
 
