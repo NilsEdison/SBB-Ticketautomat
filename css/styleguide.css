@@ -52,6 +52,31 @@
   min-width: 50px;
 }
 
+.btn-blue{
+  color: red;
+  background-color: green;
+}
+
+.btn-red{
+  color: green;
+  background-color: red;
+}
+
+.txt-gray{
+  color: green;
+  background-color: red;
+}
+
+.info-gray{
+  color: green;
+  background-color: red;
+}   
+
+.btn-help{
+  color: green;
+  background-color: red;
+}
+
 .btn-1of10{
   border: 1px solid #ccc;
   border-radius: 8px;
