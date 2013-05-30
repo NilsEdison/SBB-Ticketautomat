@@ -53,13 +53,13 @@
 }
 
 .btn-blue{
-  color: red;
-  background-color: green;
+  color: white;
+  background-color: rgb(86,99,115);
 }
 
 .btn-red{
-  color: green;
-  background-color: red;
+  color: white;
+  background-color: rgb(140,28,46);
 }
 
 .txt-gray{
