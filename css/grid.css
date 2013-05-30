@@ -36,12 +36,16 @@
 .col3of4 {
   float: left;
   width: 1522px;
-  border: 1px solid black;
 }
 
 .col1of8 {
   float: left;
   width: 247px;
+}
+
+.col3of8 {
+  float: left;
+  width: 757px;
 }
 
 .colof8a{
