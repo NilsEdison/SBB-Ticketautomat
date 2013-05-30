@@ -52,6 +52,11 @@
   min-width: 50px;
 }
 
+.btn-buy{
+  color: white;
+  background-color: rgb(0,67,160);
+}
+
 .btn-blue{
   color: white;
   background-color: rgb(86,99,115);
@@ -59,22 +64,27 @@
 
 .btn-red{
   color: white;
-  background-color: rgb(140,28,46);
+  background-color: rgb(157,26,54);
+}
+
+.navi-gray{
+  color: rgb(87,94,105);
+  background-color: rgb(234,234,234);
 }
 
 .txt-gray{
-  color: green;
-  background-color: red;
-}
-
-.info-gray{
-  color: green;
-  background-color: red;
+  color: rgb(87,94,105);
+  background-color: rgb(221,221,222);
 }   
 
+.info-blue{
+  color: rgb(87,94,105);
+  background-color: rgb(208,215,231);
+} 
+
 .btn-help{
-  color: green;
-  background-color: red;
+  color: rgb(87,94,105);
+  background-color: rgb(208,215,231);
 }
 
 .btn-1of10{
