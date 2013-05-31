@@ -7,7 +7,8 @@ console.log(model.get("datum"));
 
 var EURO = 1.3;
 
-
+//Datzn abfrage
+	var datum = model.get('datum')
 
 
 	var price = model.get('price')
@@ -23,7 +24,7 @@ var EURO = 1.3;
 
 // wenn Reduction True :2
 
-	if (oneway == 1){
+		if (oneway == 1){
 		price = price*2;
 		$('[data-bind="oneway1"]').text("Retour")
 	}
@@ -39,6 +40,14 @@ var EURO = 1.3;
 
 	if (klasse == 0){
 		$('[data-bind="klasse1"]').text("2. Klasse")
+	}
+
+	if (datum == 0){
+		$('[data-bind="datum"]').text("07.06.13")
+	}
+
+	if (datum == 1){
+		$('[data-bind="datum"]').text("08.06.13")
 	}
 
 

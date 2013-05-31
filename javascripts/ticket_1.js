@@ -183,7 +183,6 @@ model.listen('price', updatePrice);
 model.listen('klasse', updatePrice);
 model.listen('reduction', updatePrice);
 model.listen('oneway', updatePrice);
-
 model.listen('datum', updatePrice);
 
 
