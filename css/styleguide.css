@@ -199,5 +199,9 @@ ul li {
   padding-right:4px; 
 }
 
-
+th {
+  color: rgb(87,94,105);
+  border-bottom: 1px solid rgb(87,94,105);
+  width: 202px;
+}
 
