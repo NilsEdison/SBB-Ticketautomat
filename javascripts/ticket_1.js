@@ -120,16 +120,29 @@ var updatePrice = function() {
 
 // wenn Reduction True :2
 	if (reduction == 1){
-		price = price/2;
+		price = price/2;		
 	}
+
+
 
 	if (oneway == 1){
 		price = price*2;
+		$('[data-bind="oneway1"]').text("Retour")
+	}
+
+	if (oneway == 0){
+		$('[data-bind="oneway1"]').text("Einfache Fahrt")
 	}
 
 	if (klasse == 1){
 		price = price*2;
+		$('[data-bind="klasse1"]').text("1. Klasse")
 	}
+
+	if (klasse == 0){
+		$('[data-bind="klasse1"]').text("2. Klasse")
+	}
+
 
 
 // neuer Wert anzeigen
@@ -137,12 +150,18 @@ var updatePrice = function() {
 	$('[data-bind="price_eur"]').text(price*EURO)
 }
 
+
+
+
 // number.toFixed(2);
 
 model.listen('price', updatePrice);
 model.listen('klasse', updatePrice);
 model.listen('reduction', updatePrice);
 model.listen('oneway', updatePrice);
+
+
+
 
 
 
