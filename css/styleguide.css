@@ -130,6 +130,12 @@
   height: 1216px;
 }
 
+.btn-zone{
+  border-radius:8px;
+  width: 884px;
+  height: 145px;
+}
+
 .txt-small{
   font-size: 28px;
   padding-left: 20px;
