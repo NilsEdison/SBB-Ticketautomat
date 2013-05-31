@@ -11,7 +11,7 @@ body {
 }
 
 #app-container {
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   height: 1536px;
 
   width: 2048px;
