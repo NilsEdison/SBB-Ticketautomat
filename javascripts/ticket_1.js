@@ -1,3 +1,8 @@
+
+console.log(model.get("oneway"));
+console.log(model.get("klasse"));
+console.log(model.get("reduction"));
+
 var EURO = 1.3;
 
 /**
@@ -150,7 +155,7 @@ var updatePrice = function() {
 	$('[data-bind="price_eur"]').text(price*EURO)
 }
 
-
+updatePrice();
 
 
 // number.toFixed(2);

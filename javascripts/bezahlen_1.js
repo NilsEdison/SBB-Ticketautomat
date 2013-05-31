@@ -1,3 +1,5 @@
+var EURO = 1.3;
+
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
@@ -16,11 +18,6 @@ console.log(model.get("price"));
 	var oneway = model.get('oneway')
 
 // wenn Reduction True :2
-	if (reduction == 1){
-		price = price/2;		
-	}
-
-
 
 	if (oneway == 1){
 		price = price*2;
@@ -45,5 +42,5 @@ console.log(model.get("price"));
 // neuer Wert anzeigen
 
 
-	$('[data-bind="price_chf"]').text(price)
+	$('[data-bind="price_chf"]').text(price);
 	$('[data-bind="price_eur"]').text(price*EURO)
