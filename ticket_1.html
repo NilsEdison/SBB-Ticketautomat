@@ -79,11 +79,11 @@
         <div class="btn-1of10 txt-gray">
           <div class="row">
             <span class="txt-large left">CHF</span>
-            <span class="txt-large right prl">178.50</span>
+            <span class="txt-large right prl" data-bind="price_chf"></span>
           </div>
           <div class="row">
             <span class="euro-middle left">Euro</span>
-            <span class="euro-middle right prl">205.30</span>
+            <span class="euro-middle right prl" data-bind="price_eur" ></span>
           </div>
         </div>
       </div>
@@ -128,14 +128,14 @@
       </div>
 
       <div class="colof8a m8-top"> 
-        <div class="btn-1of10 btn-red">
+        <div class="btn-1of10 btn-blue" data-bind="reduction" data-value="0">
         <p class="txt-small">Vollpreis</p>
         <p class="txt-large">1/1</p>
         </div>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <div class="btn-1of10 btn-help" >
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
         </div>
       </div>
@@ -223,7 +223,7 @@
       </div>
 
       <div class="colof8a m8-top"> 
-        <div class="btn-1of10 btn-blue">
+        <div class="btn-1of10 btn-blue" data-bind="reduction" data-value="1">
         <p class="txt-small">Ermässigt</p>
         <p class="txt-large">1/2</p>
         </div>
@@ -291,7 +291,7 @@
     <div class="col1of2 m8"> 
         <div class="btn-1of10 btn-buy">
         <p class="txt-small">Abschliessen</p>
-        <p class="txt-large">Bilett kaufen</p>
+        <p class="txt-large"><a href="Ticket_bezahlen_1.html" data-stateful-link>Billet kaufen</a></p>
         </div>
     </div>
     
@@ -327,5 +327,16 @@
 
   
   </div>
+
+
+    <!-- Load Javascripts after the DOM is loaded -->
+  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+  <!-- Page specific script -->
+  <script type="text/javascript" src="javascripts/ticket_1.js"></script>
+
 </body>
 </html>
