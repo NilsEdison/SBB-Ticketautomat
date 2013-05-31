@@ -166,10 +166,15 @@
 
 
 
-a {
+.white {
   text-decoration: none;
+  color: #ffffff;
   }
 
+.dark {
+  text-decoration: none;
+  color: rgb(87,94,105);
+}
 
 
 
