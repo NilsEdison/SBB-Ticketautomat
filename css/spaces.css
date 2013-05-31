@@ -62,6 +62,10 @@ margin-top: 7px;
 .ptl, .pvl, .pal {
   padding-top: 40px;
 }
+.p-cal{
+  padding-left: 25px;
+  padding-top: 30px;
+}
 
 .prn, .phn, .pan {
   padding-right: 0;
