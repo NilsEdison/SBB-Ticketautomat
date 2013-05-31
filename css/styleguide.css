@@ -159,3 +159,34 @@
   padding-bottom: 0px;
   line-height: 1;
 }
+
+
+
+
+
+
+
+
+
+
+ul { 
+    width: 247px;
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    text-align: left;}
+
+ul li { 
+  display:inline;
+  font-size: 36;
+  text-align:left; 
+  }
+
+#point { 
+  position:relative; 
+  padding-left:4px; 
+  padding-right:4px; 
+}
+
+
+
