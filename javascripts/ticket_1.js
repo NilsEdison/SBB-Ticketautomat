@@ -2,6 +2,8 @@
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
+console.log(model.get("price"));
+console.log(model.get("datum"));
 
 var EURO = 1.3;
 
@@ -103,6 +105,11 @@ $('[data-bind="oneway"]').on('click', function(evt) {
 // Update
 updateOneWay();
 
+
+
+
+
+
 /**
  * Price
  */
@@ -110,6 +117,9 @@ updateOneWay();
 
 
 var updatePrice = function() {
+
+//Datzn abfrage
+	var datum = model.get('datum')
 
 //Grundpreis abfrage
 	var price = model.get('price')
@@ -148,6 +158,15 @@ var updatePrice = function() {
 		$('[data-bind="klasse1"]').text("2. Klasse")
 	}
 
+	if (datum == 0){
+		$('[data-bind="datum"]').text("07.06.13")
+	}
+
+	if (datum == 1){
+		$('[data-bind="datum"]').text("08.06.13")
+	}
+
+	
 
 
 // neuer Wert anzeigen
@@ -164,6 +183,8 @@ model.listen('price', updatePrice);
 model.listen('klasse', updatePrice);
 model.listen('reduction', updatePrice);
 model.listen('oneway', updatePrice);
+
+model.listen('datum', updatePrice);
 
 
 
@@ -188,5 +209,11 @@ if (model.get('oneway') == undefined) {
 if (model.get('price') == undefined) {
 	model.set('price', 34.90);
 }
+
+if (model.get('datum') == undefined) {
+	model.set('datum', 0);
+}
+
+
 
 

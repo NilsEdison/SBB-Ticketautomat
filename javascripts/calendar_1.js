@@ -1,31 +1,12 @@
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
-
-
-var updateDatum = function() {
-	datumButtons = $('[data-bind="datum"]');
-	datumButtons.each(function(i, button) {
-		var $button = $(button);
-		var datum = model.get('datum');
-
-		if ($button.data('value') == klasse) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('klasse', updateKlasse);
+console.log(model.get("price"));
+console.log(model.get("datum"));
 
 // Event handling
-$('[data-bind="klasse"]').on('click', function(evt) {
+$('[data-bind="datum"]').on('click', function(evt) {
 	var $target = $(evt.currentTarget);
-	model.set('klasse', $target.data('value'));
+	model.set('datum', $target.data('value'));
+	
 });
-
-// Update
-updateKlasse();

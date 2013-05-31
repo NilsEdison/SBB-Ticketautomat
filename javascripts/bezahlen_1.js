@@ -1,9 +1,13 @@
-var EURO = 1.3;
 
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
 console.log(model.get("price"));
+console.log(model.get("datum"));
+
+var EURO = 1.3;
+
+
 
 
 	var price = model.get('price')
