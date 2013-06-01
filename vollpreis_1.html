@@ -57,15 +57,17 @@
 <!-- Inhalt links-->
 
 
-    <div class="col1of2 m8-left">
+     <div class="col1of2 m8-left">
      
       <div class="col1of2 m8-top"> 
         <div class="btn-4of10 txt-gray">
-          <p class="txt-small ">Ihr Ticket beinhaltet</p>
-          <p class="txt-middle ptl">via Olten</p>
-          <p class="txt-middle">2. Klasse</p>
-          <p class="txt-middle">Einfache Fahrt</p>
-          <p class="txt-middle">gültig am 25.05.13</p>
+          <p class="txt-small">Ihr Ticket beinhaltet</p>
+          <p class="txt-small">Reise via</p>
+          <p class="txt-middle" data-bind="via"></p>
+          <p class="txt-middle ptl" data-bind="date"></p>
+          <p class="txt-middle" data-bind="oneway1"></p>
+          <p class="txt-middle" data-bind="klasse1"></p>
+
           <div class="row mtl">
             <span class="txt-middle left ">3x Billett (Vollpreis)</span>
             <span class="txt-middle right prl">CHF 153.00</span>
@@ -106,15 +108,16 @@
 
 
 
-    <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 txt-gray">
+    <div class="col1of2 m8-top">
+
+        <div class="btn-1of10 txt-gray" >
         <p class= "txt-small">hinzufügen von</p>
         <p class= "txt-large">Vollpreis Billette</p>
         </div>
       </div>
 
     <div class="col1of8 m8-top">
-      <div class="btn-1of10 btn-blue">
+      <div class="btn-1of10 btn-blue" data-bind="vollpreis" data-value="1">
         <p class="txt-small">Entfernen</p>
       <img class="mll mtm" src="Icons/Minus.png"></img>
       </div>
@@ -128,7 +131,7 @@
     </div>
 
     <div class="col1of8 m8">
-      <div class="btn-1of10 btn-blue">
+      <div class="btn-1of10 btn-blue" data-bind="vollpreis" data-value="2">
         <p class="txt-small">Hinzufügen</p>
       <img class="mll mtm" src="Icons/Plus.png"></img>
       </div>  
@@ -220,5 +223,5 @@
   <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
 
   <!-- Page specific script -->
-  <script type="text/javascript" src="javascripts/ticket_1.js"></script>
+  <script type="text/javascript" src="javascripts/vollpreis_1.js"></script>
 </html>

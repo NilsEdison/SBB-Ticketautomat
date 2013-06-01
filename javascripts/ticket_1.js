@@ -183,11 +183,11 @@ var updatePrice = function() {
 //Datum definieren
 
 	if (date == 1){
-		$('[data-bind="datum"]').text("07.06.13")
+		$('[data-bind="date"]').text("07.06.13")
 	}
 
 	if (date == 2){
-		$('[data-bind="datum"]').text("08.06.13")
+		$('[data-bind="date"]').text("08.06.13")
 	}
 
 
@@ -252,7 +252,7 @@ model.listen('price', updatePrice);
 model.listen('klasse', updatePrice);
 model.listen('reduction', updatePrice);
 model.listen('oneway', updatePrice);
-model.listen('datum', updatePrice);
+model.listen('date', updatePrice);
 model.listen('via', updatePrice);
 model.listen('ziel', updatePrice);
 
@@ -280,8 +280,8 @@ if (model.get('price') == undefined) {
 	model.set('price', 34.90);
 }
 
-if (model.get('datum') == undefined) {
-	model.set('datum', 0);
+if (model.get('date') == undefined) {
+	model.set('date', 1);
 }
 
 if (model.get('via') == undefined) {

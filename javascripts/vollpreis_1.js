@@ -11,6 +11,40 @@ console.log(model.get("via"));
 
 var EURO = 1.3;
 
+
+
+// Event handling
+
+var updateVollpreis = function() {
+	vollpreisButtons = $('[data-bind="vollpreis"]');
+	vollpreisButtons.each(function(i, button) {
+		var $button = $(button);
+		var vollpreis = model.get('vollpreis');
+
+		if ($button.data('value') == vollpreis) {
+			$button.removeClass('btn-blue');
+			$button.addClass('btn-red');
+		} else {
+			$button.removeClass('btn-red');
+			$button.addClass('btn-blue');
+		}
+	});
+}
+
+model.listen('vollpreis', updateVollpreis);
+
+// Event handling
+$('[data-bind="vollpreis"]').on('click', function(evt) {
+	var $target = $(evt.currentTarget);
+	model.set('vollpreis', $target.data('value'));
+});
+
+// Update
+updateVollpreis();
+
+
+
+
 var updatePrice = function() {
 
 // abfragen Datum
@@ -33,6 +67,9 @@ var updatePrice = function() {
 
 	// abfragen Oneway
 	var via = model.get('via')
+
+	// abfragen Oneway
+	var vollpreis = price
 
 // wenn Reduction True :2
 	if (reduction == 1){
@@ -74,12 +111,13 @@ var updatePrice = function() {
 //Datum definieren
 
 	if (date == 1){
-		$('[data-bind="datum"]').text("07.06.13")
+		$('[data-bind="date"]').text("07.06.13")
 	}
 
 	if (date == 2){
-		$('[data-bind="datum"]').text("08.06.13")
+		$('[data-bind="date"]').text("08.06.13")
 	}
+
 
 
 
@@ -129,9 +167,23 @@ var updatePrice = function() {
 
 
 
+
 // neuer Wert anzeigen
 	$('[data-bind="price_chf"]').text(price)
 	$('[data-bind="price_eur"]').text(price*EURO)
 }
 
 updatePrice();
+
+model.listen('price', updatePrice);
+model.listen('klasse', updatePrice);
+model.listen('reduction', updatePrice);
+model.listen('oneway', updatePrice);
+model.listen('date', updatePrice);
+model.listen('via', updatePrice);
+model.listen('ziel', updatePrice);
+
+if (model.get('vollpreis') == undefined) {
+	model.set('vollpreis', 0);
+}
+
