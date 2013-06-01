@@ -60,7 +60,8 @@
       <div class="col1of2 m8-top"> 
         <div class="btn-4of10 txt-gray">
           <p class="txt-small">Ihr Ticket beinhaltet</p>
-          <p class="txt-middle">via Baden</p>
+          <p class="txt-small">Reise via</p>
+          <p class="txt-middle" data-bind="via"></p>
           <p class="txt-middle ptl" data-bind="datum"></p>
           <p class="txt-middle" data-bind="oneway1"></p>
           <p class="txt-middle" data-bind="klasse1"></p>
@@ -105,7 +106,7 @@
       <div class="colof8a"> 
         <div class="btn-1of10 btn-red">
         <p class="txt-small">via</p>
-        <p class="txt-large">Olten</p>
+        <p class="txt-large" data-bind="via"></p>
         </div>
       </div>
 
@@ -198,10 +199,12 @@
     <div class="col1of4 m8">
      
       <div class="colof8a"> 
+        <a href="via_1.html" data-stateful-link>
         <div class="btn-1of10 btn-blue">
         <p class="txt-small">via</p>
         <p class="txt-large">wählen</p>
         </div>
+        </a>
       </div>
 
       <div class="colof8b m8-left"> 

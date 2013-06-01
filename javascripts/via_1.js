@@ -6,8 +6,8 @@ console.log(model.get("datum"));
 console.log(model.get("via"));
 
 // Event handling
-$('[data-bind="datum"]').on('click', function(evt) {
+$('[data-bind="via"]').on('click', function(evt) {
 	var $target = $(evt.currentTarget);
-	model.set('datum', $target.data('value'));
+	model.set('via', $target.data('value'));
 	
 });

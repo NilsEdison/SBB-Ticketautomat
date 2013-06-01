@@ -4,6 +4,7 @@ console.log(model.get("klasse"));
 console.log(model.get("reduction"));
 console.log(model.get("price"));
 console.log(model.get("datum"));
+console.log(model.get("via"));
 
 var EURO = 1.3;
 
@@ -133,6 +134,9 @@ var updatePrice = function() {
 // abfragen Oneway
 	var oneway = model.get('oneway')
 
+	// abfragen Oneway
+	var via = model.get('via')
+
 // wenn Reduction True :2
 	if (reduction == 1){
 		price = price/2;		
@@ -166,7 +170,15 @@ var updatePrice = function() {
 		$('[data-bind="datum"]').text("08.06.13")
 	}
 
-	
+	if (via == 0){
+		$('[data-bind="via"]').text("Brugg")
+	}
+
+	if (via == 1){
+		$('[data-bind="via"]').text("Aarau")
+	}
+
+
 
 
 // neuer Wert anzeigen
@@ -184,6 +196,7 @@ model.listen('klasse', updatePrice);
 model.listen('reduction', updatePrice);
 model.listen('oneway', updatePrice);
 model.listen('datum', updatePrice);
+model.listen('via', updatePrice);
 
 
 
@@ -212,6 +225,11 @@ if (model.get('price') == undefined) {
 if (model.get('datum') == undefined) {
 	model.set('datum', 0);
 }
+
+if (model.get('via') == undefined) {
+	model.set('via', 0);
+}
+
 
 
 

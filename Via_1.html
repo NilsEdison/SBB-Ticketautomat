@@ -55,14 +55,13 @@
 <!-- Inhalt links-->
     <div class="col1of2 m8-left">
      
-      <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 btn-blue">
+      <div class="col1of2 m8-top" data-bind="via" data-value="0"> 
+        <div class="btn-1of10 btn-blue" >
         <p class="txt-small">via</p>
           <div class="row">
-            <span class="txt-large left ">Lachen</span>
+            <span class="txt-large left ">Brugg</span>
             <span class="txt-large right prl">CHF 25.50</span>
           </div>          
-        <p class="txt-large">Lachen</p>
         </div>
       </div>
 
@@ -71,11 +70,11 @@
         </div>
       </div>
 
-      <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 btn-blue">
+      <div class="col1of2 m8-top" data-bind="via" data-value="1"> 
+        <div class="btn-1of10 btn-blue" >
         <p class="txt-small">via</p>
           <div class="row">
-            <span class="txt-large left ">Ziegelbrücke</span>
+            <span class="txt-large left ">Aarau</span>
             <span class="txt-large right prl">CHF 25.50</span>
           </div>    
         </div>
@@ -87,7 +86,7 @@
       </div>
 
       <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 btn-blue">
+        <div class="btn-1of10 btn-blue" >
         <p class="txt-small">via</p>
           <div class="row">
             <span class="txt-large left ">Zürich HB</span>
@@ -102,7 +101,7 @@
       </div>
 
       <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 btn-blue">
+        <div class="btn-1of10 btn-blue" >
         <p class="txt-small">via</p>
           <div class="row">
             <span class="txt-large left ">Chur</span>
@@ -130,7 +129,7 @@
      
       <div class="col1of2 m8-top"> 
         <div class="btn-2of10 txt-gray">
-        <p class="txt-small ptl">Nächste Verbindung via Lachen</p>
+        <p class="txt-small ptl">Nächste Verbindung via Brugg</p>
         
         <table class="txt-middle mtm mlm mrm">
           <tr>
@@ -172,7 +171,7 @@
 
       <div class="col1of2 m8-top"> 
         <div class="btn-2of10 txt-gray">
-        <p class="txt-small">Nächste Verbindung via Ziegelbrücke</p>
+        <p class="txt-small">Nächste Verbindung via Aarau</p>
         <table class="txt-middle mtm mlm mrm">
           <tr>
             <th>Ab</th>
@@ -301,8 +300,8 @@
   <div class="col1of1 m8">
 
     <div class="col1of4 ">
+      <a href="ticket_1.html" data-stateful-link>
       <div class="btn-1of10 navi-gray">
-      <a class="dark" href="sbb_verbindung_1.html">
       <p class="txt-small">Zurück</p>
       <img class="mll mtm" src="Icons/back.png"></img>
       </a>
@@ -330,4 +329,12 @@
   
   </div>
 </body>
+
+ <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+  <!-- Page specific script -->
+  <script type="text/javascript" src="javascripts/via_1.js"></script>
 </html>
