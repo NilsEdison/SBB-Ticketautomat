@@ -32,7 +32,7 @@
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
        <p class="txt-small">Ihr Reiseziel</p>
-       <p class="txt-large">Luzern</p>
+       <p class="txt-large" data-bind="ziel"></p>
        </div>
      </div>
 
@@ -212,4 +212,13 @@
   
   </div>
 </body>
+
+    <!-- Load Javascripts after the DOM is loaded -->
+  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+  <!-- Page specific script -->
+  <script type="text/javascript" src="javascripts/ticket_1.js"></script>
 </html>

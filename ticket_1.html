@@ -24,14 +24,14 @@
       <div class="col1of4 ">
         <div class="btn-1of10 navi-gray">
         <p class="txt-small">Ihr aktueller Standort</p>
-        <p class="txt-large">Zürich</p>
+        <p class="txt-large">Killwangen</p>
         </div>
      </div>
 
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
        <p class="txt-small">Ihr Reiseziel</p>
-       <p class="txt-large">Luzern</p>
+       <p class="txt-large" data-bind="ziel"></p>
        </div>
      </div>
 
@@ -62,7 +62,7 @@
           <p class="txt-small">Ihr Ticket beinhaltet</p>
           <p class="txt-small">Reise via</p>
           <p class="txt-middle" data-bind="via"></p>
-          <p class="txt-middle ptl" data-bind="datum"></p>
+          <p class="txt-middle ptl" data-bind="date"></p>
           <p class="txt-middle" data-bind="oneway1"></p>
           <p class="txt-middle" data-bind="klasse1"></p>
 
@@ -159,7 +159,7 @@
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-red">
         <p class="txt-small">gültig am</p>
-        <p class="txt-large" data-bind="datum"></p>
+        <p class="txt-large" data-bind="date"></p>
         </div>
       </div>
 
@@ -268,8 +268,10 @@
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-blue">
+        <a href="vollpreis_1.html" data-stateful-link>
         <p class="txt-small">Anzahl Bilette</p>
         <p class="txt-large">wählen</p>
+        </a>
         </div>
       </div>
 

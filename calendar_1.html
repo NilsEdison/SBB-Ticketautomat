@@ -20,12 +20,13 @@
   <div id="app-container">
 
     <div class="col1of1 m7">
-
+ <a class="white" href="ticket_1.html" data-my-special-link data-bind="ziel" data-value="6">
       <div class="col3of4 ">
         <div class="btn-1of10 navi-gray">
         <p class="txt-small">Ihr aktueller Standort</p>
         <p class="txt-large">Zürich</p>
         </div>
+      </a>
      </div>
 
       
@@ -46,20 +47,23 @@
 <!-- Inhalt -->
 
 
-    <div class="col1of2 m8" data-bind="datum" data-value="0"> 
-        <div class="btn-1of10 btn-blue" >
+    <div class="col1of2 m8"> 
+        <div class="btn-1of10 btn-blue">
+         <a class="white" href="ticket_1.html" data-my-special-link data-bind="date" data-value="1">
         <p class= "txt-small">Datum</p>
         <p class="txt-large">Heute 7.06.12</p>
         </a>
         </div>
     </div>
 
-    <div class="col1of2 m8"  data-bind="datum" data-value="1"> 
+    <div class="col1of2 m8"> 
         <div class="btn-1of10 btn-blue">
+   <a class="white" href="ticket_1.html" data-my-special-link data-bind="date" data-value="2">
         <p class="txt-small"> Datum</p>
-        <p class="txt-large">Morgen 8.06.12</p> 
+        <p class="txt-large">Morgen 8.06.12</p>
+         </a>
+
         </div>
-        
     </div>
 
     <div class="colcalendar1 m8"> 
@@ -373,7 +377,7 @@
   <div class="col1of1 m8">
 
     <div class="col1of4 ">
-      <a href="ticket_1.html" data-stateful-link>
+      <a href="ticket_1.html">
       <div class="btn-1of10 navi-gray">
       <p class="txt-small">Zurück</p>
       <img class="mll mtm" src="Icons/back.png"></img>
