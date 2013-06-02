@@ -7,6 +7,7 @@ console.log(model.get("via"));
 console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
 console.log(model.get("date"));
+console.log(model.get("zusatz"));
 
 
 
@@ -110,6 +111,37 @@ updateOneWay();
 
 
 
+/**
+ * Zusatze
+ */
+
+// Listener
+var updateZusatz = function() {
+	zusatzButtons = $('[data-bind="zusatz"]');
+	zusatzButtons.each(function(i, button) {
+		var $button = $(button);
+		var zusatz = model.get('zusatz');
+
+		if ($button.data('value') == zusatz) {
+			$button.removeClass('btn-blue');
+			$button.addClass('btn-red');
+		} else {
+			$button.removeClass('btn-red');
+			$button.addClass('btn-blue');
+		}
+	});
+}
+
+model.listen('zusatz', updateZusatz);
+
+// Event handling
+$('[data-bind="zusatz"]').on('click', function(evt) {
+	var $target = $(evt.currentTarget);
+	model.set('zusatz', $target.data('value'));
+});
+
+// Update
+updateZusatz();
 
 
 
@@ -134,8 +166,8 @@ var updatePrice = function() {
 //Datzn abfrage
 	var date = model.get('date')
 
-//Grundpreis abfrage
-
+//Zusatz abfrage
+	var zusatz = model.get('zusatz')
 
 // abfragen Klasse
 	var klasse = model.get('klasse')
@@ -154,7 +186,7 @@ var updatePrice = function() {
 		price = price/2;		
 	}
 
-
+// Retour definieren
 
 	if (oneway == 1){
 		price = price*2;
@@ -165,6 +197,8 @@ var updatePrice = function() {
 		$('[data-bind="oneway1"]').text("Einfache Fahrt")
 	}
 
+//Klasse definieren
+
 	if (klasse == 1){
 		price = price*2;
 		$('[data-bind="klasse1"]').text("1. Klasse")
@@ -174,7 +208,7 @@ var updatePrice = function() {
 		$('[data-bind="klasse1"]').text("2. Klasse")
 	}
 
-
+//Via definieren
 
 	if (via == 1){
 		$('[data-bind="via"]').text("Brugg")
@@ -394,6 +428,11 @@ if (model.get('hinzu1') == undefined) {
 if (model.get('halb1') == undefined) {
 	model.set('halb1', 0);
 }
+
+if (model.get('zusatz') == undefined) {
+	model.set('zusatz', 0);
+}
+
 
 
 
