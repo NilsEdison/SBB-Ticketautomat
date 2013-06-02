@@ -84,21 +84,21 @@ var updatePrice = function() {
 	var date = model.get('date')
 
 //Grundpreis abfrage
-	var c = parseInt(1) 
-	var d = parseInt(1) 
+	var c = 1 
+	var d = 1 
 
 	if (hinzu1 == 1){
-		var c = parseFloat(1) 
+		var c = 1
 		$('[data-bind="hinzu2"]').text("1x Vollpreis")  	
 	} 
 
 	if (hinzu1 == 2){
-		var c = parseFloat(2) 
+		var c = c+1 
 		$('[data-bind="hinzu2"]').text("2x Vollpreis")
 	}
 
 	if (hinzu1 == 3){
-		var c = parseFloat(0) 
+		var c = c-1 
 		$('[data-bind="hinzu2"]').text("hinzufügen")  	
 	}
 
