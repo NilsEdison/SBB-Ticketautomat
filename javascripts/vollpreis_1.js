@@ -13,15 +13,13 @@ var EURO = 1.3;
 
 
 
-// Event handling
-
-var updateVollpreis = function() {
-	vollpreisButtons = $('[data-bind="vollpreis"]');
-	vollpreisButtons.each(function(i, button) {
+var updateHinzu1 = function() {
+	hinzu1Buttons = $('[data-bind="hinzu1"]');
+	hinzu1Buttons.each(function(i, button) {
 		var $button = $(button);
-		var vollpreis = model.get('vollpreis');
+		var hinzu1 = model.get('hinzu1');
 
-		if ($button.data('value') == vollpreis) {
+		if ($button.data('value') == hinzu1) {
 			$button.removeClass('btn-blue');
 			$button.addClass('btn-red');
 		} else {
@@ -31,21 +29,23 @@ var updateVollpreis = function() {
 	});
 }
 
-model.listen('vollpreis', updateVollpreis);
+model.listen('hinzu1', updateHinzu1);
 
 // Event handling
-$('[data-bind="vollpreis"]').on('click', function(evt) {
+$('[data-bind="hinzu1"]').on('click', function(evt) {
 	var $target = $(evt.currentTarget);
-	model.set('vollpreis', $target.data('value'));
+	model.set('hinzu1', $target.data('value'));
 });
 
 // Update
-updateVollpreis();
-
-
-
+updateHinzu1();
 
 var updatePrice = function() {
+
+
+// abfragen hinzufügen
+	var hinzu1 = model.get('hinzu1')
+
 
 // abfragen Datum
 	var ziel = model.get('ziel')
@@ -54,7 +54,11 @@ var updatePrice = function() {
 	var date = model.get('date')
 
 //Grundpreis abfrage
-	var price = model.get('price')
+	var price = parseFloat(model.get('price'))
+	var a = parseFloat(price)*c
+	var b = parseFloat(price/2)
+	var pricetot = parseFloat(a+b)
+
 
 // abfragen Klasse
 	var klasse = model.get('klasse')
@@ -68,13 +72,33 @@ var updatePrice = function() {
 	// abfragen Oneway
 	var via = model.get('via')
 
-	// abfragen Oneway
-	var vollpreis = price
-
 // wenn Reduction True :2
 	if (reduction == 1){
-		price = price/2;		
+		price = parseFloat(price/2);		
 	}
+
+
+
+// vollpreis
+
+	var c = parseInt(1) 
+
+	if (hinzu1 == 0){
+		var c = parseFloat(1) 
+		$('[data-bind="hinzu2"]').text("1x")  	
+	} 
+
+	if (hinzu1 == 2){
+		var c = parseFloat(2) 
+		$('[data-bind="hinzu2"]').text("0x")
+	}
+
+	if (hinzu1 == 3){
+		var c = parseFloat(1) 
+		$('[data-bind="hinzu2"]').text("2x")  	
+	}
+
+
 
 
 
@@ -117,7 +141,6 @@ var updatePrice = function() {
 	if (date == 2){
 		$('[data-bind="date"]').text("08.06.13")
 	}
-
 
 
 
@@ -167,13 +190,18 @@ var updatePrice = function() {
 
 
 
-
 // neuer Wert anzeigen
-	$('[data-bind="price_chf"]').text(price)
-	$('[data-bind="price_eur"]').text(price*EURO)
+
+	$('[data-bind="price_chf1"]').text(a)
+	$('[data-bind="price_chf2"]').text(b)
+	$('[data-bind="price_chftot"]').text(pricetot)
+	$('[data-bind="price_eur"]').text(pricetot*EURO)
 }
 
 updatePrice();
+
+
+// number.toFixed(2);
 
 model.listen('price', updatePrice);
 model.listen('klasse', updatePrice);
@@ -182,8 +210,12 @@ model.listen('oneway', updatePrice);
 model.listen('date', updatePrice);
 model.listen('via', updatePrice);
 model.listen('ziel', updatePrice);
+model.listen('hinzu1', updatePrice);
 
-if (model.get('vollpreis') == undefined) {
-	model.set('vollpreis', 0);
+
+if (model.get('hinzu2') == undefined) {
+	model.set('hinzu2', 1);
 }
+
+
 

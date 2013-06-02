@@ -69,12 +69,12 @@
           <p class="txt-middle" data-bind="klasse1"></p>
 
           <div class="row mtl">
-            <span class="txt-middle left ">3x Billett (Vollpreis)</span>
-            <span class="txt-middle right prl">CHF 153.00</span>
+            <span class="txt-middle left ">1x Billett (price)</span>
+            <span class="txt-middle right prl" data-bind="price_chf1"></span>
           </div>
           <div class="row">
             <span class="txt-middle left ">1x Billett (Ermässigt)</span>
-            <span class="txt-middle right prl">CHF 25.50</span>
+            <span class="txt-middle right prl " data-bind="price_chf2"></span>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
         <div class="btn-1of10 txt-gray">
           <div class="row">
             <span class="txt-large left">CHF</span>
-            <span class="txt-large right prl" data-bind="price_chf"></span>
+            <span class="txt-large right prl" data-bind="price_chftot"></span>
           </div>
           <div class="row">
             <span class="euro-middle left">Euro</span>
@@ -117,7 +117,7 @@
       </div>
 
     <div class="col1of8 m8-top">
-      <div class="btn-1of10 btn-blue" data-bind="vollpreis" data-value="1">
+      <div class="btn-1of10 btn-blue" data-bind="hinzu1" data-value="2">
         <p class="txt-small">Entfernen</p>
       <img class="mll mtm" src="Icons/Minus.png"></img>
       </div>
@@ -126,12 +126,12 @@
     <div class="col1of4 m8">
       <div class="btn-1of10 txt-gray">
         <p class="txt-small">Anzahl Vollpreis Billette</p>
-        <p class="txt-large">1x</p>
+        <p class="txt-large"data-bind="hinzu2"></p>
       </div>
     </div>
 
     <div class="col1of8 m8">
-      <div class="btn-1of10 btn-blue" data-bind="vollpreis" data-value="2">
+      <div class="btn-1of10 btn-blue" data-bind="hinzu1" data-value="3">
         <p class="txt-small">Hinzufügen</p>
       <img class="mll mtm" src="Icons/Plus.png"></img>
       </div>  
