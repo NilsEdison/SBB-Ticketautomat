@@ -13,7 +13,7 @@
 
 
 
-<body>
+<body onload="setInterval('updateClock()', 200);">
 
 <!-- Header -->
 
@@ -44,7 +44,7 @@
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
        <p class="txt-small">Aktuelle Uhrzeit</p>
-       <p class="txt-large">13:37</p>
+       <p class="txt-large" id="clock"></p>
        </div>
      </div>
   </div>
@@ -468,4 +468,37 @@
 
   <!-- Page specific script -->
   <script type="text/javascript" src="javascripts/via_1.js"></script>
+
+    <!-- load Clock -->
+  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
+
+  <script type="text/javascript">
+            // This function gets the current time and injects it into the DOM
+            function updateClock() {
+                // Gets the current time
+                var now = new Date();
+ 
+                // Get the hours, minutes and seconds from the current time
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+
+ 
+                // Format hours, minutes and seconds
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+
+                }
+ 
+                // Gets the element we want to inject the clock into
+                var elem = document.getElementById('clock');
+ 
+                // Sets the elements inner HTML value to our clock data
+                elem.innerHTML = hours + ':' + minutes;
+            }
+        </script>
+
+</body>
 </html>
