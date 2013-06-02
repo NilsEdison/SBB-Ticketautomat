@@ -1,15 +1,17 @@
-//get Location
 console.log(model.get("ziel"));
-
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
 console.log(model.get("price"));
 console.log(model.get("date"));
 console.log(model.get("via"));
+console.log(model.get("hinzu1"));
+console.log(model.get("halb"));
 
 
 var EURO = 1.3;
+var c = 1 ;
+var d = 0 ;
 
 /**
  * Klasse
@@ -151,7 +153,7 @@ var updatePrice = function() {
 
 
 	if (oneway == 1){
-		price = price*2;
+		pricetot = pricetot*2;
 		$('[data-bind="oneway1"]').text("Retour")
 	}
 
@@ -160,7 +162,7 @@ var updatePrice = function() {
 	}
 
 	if (klasse == 1){
-		price = price*2;
+		pricetot = pricetot*2;
 		$('[data-bind="klasse1"]').text("1. Klasse")
 	}
 
@@ -239,8 +241,15 @@ var updatePrice = function() {
 
 
 // neuer Wert anzeigen
-	$('[data-bind="price_chf"]').text(price)
-	$('[data-bind="price_eur"]').text(price*EURO)
+	var price = parseFloat(model.get('price'))
+	var a = parseFloat(price)*c
+	var b = parseFloat(price/2)*d
+	var pricetot = parseFloat(a+b)
+
+	$('[data-bind="price_chf1"]').text(a)
+	$('[data-bind="price_chf2"]').text(b)
+	$('[data-bind="price_chftot"]').text(pricetot)
+	$('[data-bind="price_eur"]').text(pricetot*EURO)
 }
 
 updatePrice();
