@@ -31,7 +31,7 @@ var h = 0 ;
 // Event handling
 $('[data-bind="nacht"]').on('click', function(evt) {
 	var $target = $(evt.currentTarget);
-	model.set('nacht', $target.data('nacht'));
+	model.set('nacht', $target.data('value'));
 	updatePrice();
 });
 
@@ -39,13 +39,13 @@ $('[data-bind="nacht"]').on('click', function(evt) {
 
 $('[data-bind="velo"]').on('click', function(evt) {
 	var $target = $(evt.currentTarget);
-	model.set('velo', $target.data('velo'));
+	model.set('velo', $target.data('value'));
 	updatePrice();
 });
 
 $('[data-bind="hund"]').on('click', function(evt) {
 	var $target = $(evt.currentTarget);
-	model.set('hund', $target.data('hund'));
+	model.set('hund', $target.data('value'));
 	updatePrice();
 });
 

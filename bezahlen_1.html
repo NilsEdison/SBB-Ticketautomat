@@ -13,27 +13,38 @@
 
 
 
-<body>
+<body onload="setInterval('updateClock()', 200);">
 
 <!-- Header -->
+
   <div id="app-container">
 
     <div class="col1of1 m7">
 
-      <div class="col3of4">
+      <div class="col1of4 ">
         <div class="btn-1of10 navi-gray">
-        <p class="txt-small">Hier kommt Logo</p>
-
+        <p class="txt-small">Ihr aktueller Standort</p>
+        <p class="txt-large">Killwangen</p>
         </div>
      </div>
 
+      <div class="col1of4 m8-left">
+       <div class="btn-1of10 navi-gray">
+       <p class="txt-small">Ihr Reiseziel</p>
+       <p class="txt-large" data-bind="ziel"></p>
+       </div>
+     </div>
 
-
+     <div class="col1of4 m8-left">
+        <div class="btn-1of10 navi-gray">
+      
+        </div>
+     </div>
 
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
        <p class="txt-small">Aktuelle Uhrzeit</p>
-       <p class="txt-large">13:37</p>
+       <p class="txt-large" id="clock"></p>
        </div>
      </div>
   </div>
@@ -47,20 +58,20 @@
      
       <div class="col1of2 m8-top"> 
         <div class="btn-7of10 txt-gray">
-               <p class="txt-small">Ihr Ticket beinhaltet</p>
+          <p class="txt-small">Ihr Ticket beinhaltet</p>
           <p class="txt-small">Reise via</p>
           <p class="txt-middle" data-bind="via"></p>
-          <p class="txt-middle ptl" data-bind="datum"></p>
+          <p class="txt-middle ptl" data-bind="date"></p>
           <p class="txt-middle" data-bind="oneway1"></p>
           <p class="txt-middle" data-bind="klasse1"></p>
 
           <div class="row mtl">
-            <span class="txt-middle left ">3x Billett (Vollpreis)</span>
-            <span class="txt-middle right prl">CHF 153.00</span>
+            <span class="txt-middle left " data-bind="hinzu2"></span>
+            <span class="txt-middle right prl" data-bind="price_chf1"></span>
           </div>
           <div class="row">
-            <span class="txt-middle left ">1x Billett (Ermässigt)</span>
-            <span class="txt-middle right prl">CHF 25.50</span>
+            <span class="txt-middle left " data-bind="halb1"></span>
+            <span class="txt-middle right prl " data-bind="price_chf2"></span>
           </div>
         </div>
       </div>
@@ -140,6 +151,7 @@
   
   </div>
 
+
     <!-- Load Javascripts after the DOM is loaded -->
   <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
   <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
@@ -148,6 +160,38 @@
 
   <!-- Page specific script -->
   <script type="text/javascript" src="javascripts/bezahlen_1.js"></script>
+
+
+  <!-- load Clock -->
+  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
+
+  <script type="text/javascript">
+            // This function gets the current time and injects it into the DOM
+            function updateClock() {
+                // Gets the current time
+                var now = new Date();
+ 
+                // Get the hours, minutes and seconds from the current time
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+
+ 
+                // Format hours, minutes and seconds
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+
+                }
+ 
+                // Gets the element we want to inject the clock into
+                var elem = document.getElementById('clock');
+ 
+                // Sets the elements inner HTML value to our clock data
+                elem.innerHTML = hours + ':' + minutes;
+            }
+        </script>
 
 </body>
 </html>

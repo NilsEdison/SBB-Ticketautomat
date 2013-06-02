@@ -13,18 +13,19 @@
 
 
 
-<body>
+<body onload="setInterval('updateClock()', 200);">
 
 <!-- Header -->
 
   <div id="app-container">
 
     <div class="col1of1 m7">
-
+      <a href="personas.html">
       <div class="col3of4">
         <div class="btn-1of10 navi-gray">
         <img class="mlm mts" src="Icons/sbb.png"></img>
-        </div>
+      </div>
+      </a>
      </div>
 
 
@@ -33,7 +34,7 @@
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
        <p class="txt-small">Aktuelle Uhrzeit</p>
-       <p class="txt-large">13:37</p>
+       <p class="txt-large" id="clock"></p>
        </div>
      </div>
   </div>
@@ -56,7 +57,7 @@
       </div>
 
       <div class="col1of2 m8-top"> 
-        <a a class="white" href="startseite_2.html">
+        <a a class="white" href="startseite_1.html">
         <div class="btn-2of10 btn-blue">    
           <p class="txt-small ">wähle Persona</p>
           <p class="txt-large">Adam Beaver</p>
@@ -65,7 +66,7 @@
       </div>
 
       <div class="col1of2 m8-top"> 
-        <a class="white" href="startseite_3.html">
+        <a class="white" href="startseite_1.html">
         <div class="btn-2of10 btn-blue">    
           <p class="txt-small ">wähle Persona</p>
           <p class="txt-large">Sebastian Friedli</p>
@@ -75,7 +76,7 @@
 
 
      <div class="col1of2 m8-top"> 
-        <a class="white" href="startseite_4.html">
+        <a class="white" href="startseite_1.html">
         <div class="btn-2of10 btn-blue">    
           <p class="txt-small ">wähle Persona</p>
           <p class="txt-large">Erich Siegrist</p>
@@ -89,7 +90,7 @@
     <div class="col1of2 m8-left">
      
      <div class="col1of2 m8-top"> 
-        <a class="white" href="startseite_5.html">
+        <a class="white" href="startseite_1.html">
         <div class="btn-2of10 btn-blue">    
           <p class="txt-small ">wähle Persona</p>
           <p class="txt-large">Roger Heller</p>
@@ -98,7 +99,7 @@
       </div>
 
      <div class="col1of2 m8-top"> 
-        <a class="white" href="startseite_6.html">
+        <a class="white" href="startseite_1.html">
         <div class="btn-2of10 btn-blue">    
           <p class="txt-small ">wähle Persona</p>
           <p class="txt-large">Tobias vom Land</p>
@@ -107,7 +108,7 @@
       </div>
     
       <div class="col1of2 m8-top"> 
-        <a class="white" href="startseite_7.html">
+        <a class="white" href="startseite_1.html">
         <div class="btn-2of10 btn-blue">    
           <p class="txt-small ">wähle Persona</p>
           <p class="txt-large">Jürgen Späth</p>
@@ -135,35 +136,59 @@
 
   <div class="col1of1 m8">
 
-    <div class="col1of4 ">
+    <div class="col1of1 ">
       <div class="btn-1of10 navi-gray">
-      <a class="dark" href="sbb_verbindung_1.html">
-      <p class="txt-small">Zurück</p>
-      <img class="mll mtm" src="Icons/back.png"></img>
-      </a>
+      <p class="txt-small">Konzept Kevin Benz / Sandi Elezovic / Ramon Marc</p>
       </div>
     </div>
-
-    <div class="col1of4 m8-left">
-      <div class="btn-1of10 navi-gray">
-      <a class="dark" href="startseite_1.html">
-      <p class="txt-small">Abbrechen</p>
-      <img class="mll mtm" src="Icons/cancel.png"></img>
-      </div>
-    </div>
-
-    <div class="col1of2 m8-left">
-      <div class="btn-1of10 navi-gray">
-      <p class="txt-small">Hilfe</p>
-      <img class="mll mtm" src="Icons/help.png"></img>
-      </div>
-      </a>
-    </div>
-
   </div>
 
   
   </div>
+
+    <!-- Load Javascripts after the DOM is loaded -->
+  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+  <!-- Page specific script -->
+ 
+
+  <!-- load Clock -->
+  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
+
+  <script type="text/javascript">
+            // This function gets the current time and injects it into the DOM
+            function updateClock() {
+                // Gets the current time
+                var now = new Date();
+ 
+                // Get the hours, minutes and seconds from the current time
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+
+ 
+                // Format hours, minutes and seconds
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+
+                }
+ 
+                // Gets the element we want to inject the clock into
+                var elem = document.getElementById('clock');
+ 
+                // Sets the elements inner HTML value to our clock data
+                elem.innerHTML = hours + ':' + minutes;
+            }
+        </script>
+
+</body>
+</html>
+
 </body>
 </html>
 
