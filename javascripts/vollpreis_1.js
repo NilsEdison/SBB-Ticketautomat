@@ -250,6 +250,6 @@ if (model.get('halb1') == undefined) {
 	model.set('halb1', 0);
 }
 
-
+model.set('total', pricetot);
 
 

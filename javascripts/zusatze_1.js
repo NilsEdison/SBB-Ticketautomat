@@ -25,6 +25,9 @@ var h = 0 ;
 
 
 
+
+
+
 // Event handling
 $('[data-bind="nacht"]').on('click', function(evt) {
 	var $target = $(evt.currentTarget);
@@ -49,10 +52,12 @@ $('[data-bind="hund"]').on('click', function(evt) {
 var updatePrice = function() {
 
 
+
+var nacht = model.get('nacht') ;
+var velo = model.get('velo') ;
+var hund = model.get('hund') ;
+
 // abfragen hinzufügen
-	var nacht = model.get('nacht')
-	var velo = model.get('velo')
-	var hund = model.get('hund')
 
 
 // abfragen Datum
@@ -83,7 +88,7 @@ var updatePrice = function() {
 	if (n==0){
 		$('[data-bind="nacht1"]').text("hinzufügen")
 	} else{
-		$('[data-bind="nacht1"]').text(c+"x Nachtzuschlag")
+		$('[data-bind="nacht1"]').text(n+"x Nacht")
 	}
 
 
@@ -106,7 +111,7 @@ var updatePrice = function() {
 	if (v==0){
 		$('[data-bind="velo1"]').text("hinzufügen")
 	} else{
-		$('[data-bind="velo1"]').text(d+"x Velobilett")
+		$('[data-bind="velo1"]').text(v+"x Velobilett")
 	}
 
 
@@ -262,6 +267,9 @@ var updatePrice = function() {
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
+	$('[data-bind="price_chf2"]').text(x)
+	$('[data-bind="price_chf2"]').text(y)
+	$('[data-bind="price_chf2"]').text(z)
 	$('[data-bind="price_chftot"]').text(pricetot)
 	$('[data-bind="price_eur"]').text(pricetot*EURO)
 }
@@ -298,11 +306,11 @@ if (model.get('nacht') == undefined) {
 }
 
 if (model.get('velo') == undefined) {
-	model.set('velo', 0);
+	model.set('velo', 1);
 }
 
 if (model.get('hund') == undefined) {
-	model.set('hund', 0);
+	model.set('hund', 1);
 }
 
 
