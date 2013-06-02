@@ -26,6 +26,7 @@ $('[data-my-special-link]').on('click', function(evt) {
 });
 
 
+
 if (ziel == 1){
 		$('[data-bind="ziel"]').text("Turgi");
 		model.set('price', 42);
