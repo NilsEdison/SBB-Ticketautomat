@@ -9,9 +9,6 @@ console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
 
 
-var EURO = 1.3;
-var c = 1 ;
-var d = 0 ;
 
 /**
  * Klasse
@@ -124,14 +121,21 @@ updateOneWay();
 
 var updatePrice = function() {
 
+	var price = (model.get('price'))
+	var EURO = 1.3;
+	var c = model.get("hinzu1") ;
+	var d = (model.get("halb")/2) ;
+
 // abfragen Datum
 	var ziel = model.get('ziel')
+
+	var via = model.get('via')
 
 //Datzn abfrage
 	var date = model.get('date')
 
 //Grundpreis abfrage
-	var price = model.get('price')
+
 
 // abfragen Klasse
 	var klasse = model.get('klasse')
@@ -153,7 +157,7 @@ var updatePrice = function() {
 
 
 	if (oneway == 1){
-		pricetot = pricetot*2;
+		price = price*2;
 		$('[data-bind="oneway1"]').text("Retour")
 	}
 
@@ -162,7 +166,7 @@ var updatePrice = function() {
 	}
 
 	if (klasse == 1){
-		pricetot = pricetot*2;
+		price = price*2;
 		$('[data-bind="klasse1"]').text("1. Klasse")
 	}
 
@@ -172,12 +176,20 @@ var updatePrice = function() {
 
 
 
-	if (via == 0){
+	if (via == 1){
 		$('[data-bind="via"]').text("Brugg")
 	}
 
-	if (via == 1){
+	if (via == 2){
 		$('[data-bind="via"]').text("Aarau")
+	}
+
+	if (via == 3){
+		$('[data-bind="via"]').text("Zürich HB")
+	}
+
+	if (via == 4){
+		$('[data-bind="via"]').text("Chur")
 	}
 
 	
@@ -192,6 +204,93 @@ var updatePrice = function() {
 		$('[data-bind="date"]').text("08.06.13")
 	}
 
+	if (date == 3){
+		$('[data-bind="date"]').text("09.06.13")
+	}
+
+	if (date == 4){
+		$('[data-bind="date"]').text("10.06.13")
+	}
+
+	if (date == 2){
+		$('[data-bind="date"]').text("11.06.13")
+	}
+
+	if (date == 3){
+		$('[data-bind="date"]').text("12.06.13")
+	}
+
+	if (date == 4){
+		$('[data-bind="date"]').text("13.06.13")
+	}
+
+	if (date == 5){
+		$('[data-bind="date"]').text("14.06.13")
+	}
+
+	if (date == 6){
+		$('[data-bind="date"]').text("15.06.13")
+	}
+
+	if (date == 7){
+		$('[data-bind="date"]').text("16.06.13")
+	}
+
+	if (date == 8){
+		$('[data-bind="date"]').text("17.06.13")
+	}
+
+	if (date == 9){
+		$('[data-bind="date"]').text("18.06.13")
+	}
+
+	if (date == 10){
+		$('[data-bind="date"]').text("19.06.13")
+	}
+
+	if (date == 11){
+		$('[data-bind="date"]').text("20.06.13")
+	}
+
+	if (date == 12){
+		$('[data-bind="date"]').text("21.06.13")
+	}
+
+	if (date == 13){
+		$('[data-bind="date"]').text("22.06.13")
+	}
+
+	if (date == 14){
+		$('[data-bind="date"]').text("23.06.13")
+	}
+
+	if (date == 15){
+		$('[data-bind="date"]').text("24.06.13")
+	}
+
+	if (date == 16){
+		$('[data-bind="date"]').text("25.06.13")
+	}
+
+	if (date == 17){
+		$('[data-bind="date"]').text("26.06.13")
+	}
+
+	if (date == 18){
+		$('[data-bind="date"]').text("27.06.13")
+	}
+
+	if (date == 19){
+		$('[data-bind="date"]').text("28.06.13")
+	}
+
+	if (date == 20){
+		$('[data-bind="date"]').text("29.06.13")
+	}
+
+	if (date == 21){
+		$('[data-bind="date"]').text("30.06.13")
+	}
 
 
 
@@ -241,15 +340,18 @@ var updatePrice = function() {
 
 
 // neuer Wert anzeigen
-	var price = parseFloat(model.get('price'))
-	var a = parseFloat(price)*c
-	var b = parseFloat(price/2)*d
-	var pricetot = parseFloat(a+b)
+	var a = (price)*c
+var b = (price/2)*d
+var pricetot = (a+b)
+
+
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
 	$('[data-bind="price_chftot"]').text(pricetot)
 	$('[data-bind="price_eur"]').text(pricetot*EURO)
+
+
 }
 
 updatePrice();
@@ -296,6 +398,15 @@ if (model.get('date') == undefined) {
 if (model.get('via') == undefined) {
 	model.set('via', 0);
 }
+
+if (model.get('hinzu1') == undefined) {
+	model.set('hinzu1', 1);
+}
+
+if (model.get('halb1') == undefined) {
+	model.set('halb1', 0);
+}
+
 
 
 
