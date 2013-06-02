@@ -40,11 +40,41 @@ $('[data-bind="hinzu1"]').on('click', function(evt) {
 // Update
 updateHinzu1();
 
+
+// Listener
+var updateHalb = function() {
+	halbButtons = $('[data-bind="halb"]');
+	halbButtons.each(function(i, button) {
+		var $button = $(button);
+		var halb = model.get('halb');
+
+		if ($button.data('value') == halb) {
+			$button.removeClass('btn-blue');
+			$button.addClass('btn-red');
+		} else {
+			$button.removeClass('btn-red');
+			$button.addClass('btn-blue');
+		}
+	});
+}
+
+model.listen('halb', updateHalb);
+
+// Event handling
+$('[data-bind="halb"]').on('click', function(evt) {
+	var $target = $(evt.currentTarget);
+	model.set('halb', $target.data('value'));
+});
+
+// Update
+updateHalb();
+
 var updatePrice = function() {
 
 
 // abfragen hinzufügen
 	var hinzu1 = model.get('hinzu1')
+	var halb = model.get('halb')
 
 
 // abfragen Datum
@@ -54,9 +84,45 @@ var updatePrice = function() {
 	var date = model.get('date')
 
 //Grundpreis abfrage
+	var c = parseInt(1) 
+	var d = parseInt(1) 
+
+	if (hinzu1 == 1){
+		var c = parseFloat(1) 
+		$('[data-bind="hinzu2"]').text("1x Vollpreis")  	
+	} 
+
+	if (hinzu1 == 2){
+		var c = parseFloat(2) 
+		$('[data-bind="hinzu2"]').text("2x Vollpreis")
+	}
+
+	if (hinzu1 == 3){
+		var c = parseFloat(0) 
+		$('[data-bind="hinzu2"]').text("hinzufügen")  	
+	}
+
+	if (halb == 1){
+		var d = parseFloat(1)
+		$('[data-bind="halb1"]').text("1x Ermässigt")
+	}
+
+	if (halb == 2){
+		var d = parseFloat(2)
+		$('[data-bind="halb1"]').text("2x Ermässigt")
+	}
+
+		if (halb == 3){
+		var d = parseFloat(0)
+		$('[data-bind="halb1"]').text("hinzufügen?")
+	}
+
+	
+
+
 	var price = parseFloat(model.get('price'))
 	var a = parseFloat(price)*c
-	var b = parseFloat(price/2)
+	var b = parseFloat(price/2)*d
 	var pricetot = parseFloat(a+b)
 
 
@@ -81,23 +147,10 @@ var updatePrice = function() {
 
 // vollpreis
 
-	var c = parseInt(1) 
+	
 
-	if (hinzu1 == 0){
-		var c = parseFloat(1) 
-		$('[data-bind="hinzu2"]').text("1x")  	
-	} 
 
-	if (hinzu1 == 2){
-		var c = parseFloat(2) 
-		$('[data-bind="hinzu2"]').text("0x")
-	}
-
-	if (hinzu1 == 3){
-		var c = parseFloat(1) 
-		$('[data-bind="hinzu2"]').text("2x")  	
-	}
-
+	
 
 
 
@@ -211,10 +264,15 @@ model.listen('date', updatePrice);
 model.listen('via', updatePrice);
 model.listen('ziel', updatePrice);
 model.listen('hinzu1', updatePrice);
+model.listen('halb1', updatePrice);
 
 
-if (model.get('hinzu2') == undefined) {
-	model.set('hinzu2', 1);
+if (model.get('hinzu1') == undefined) {
+	model.set('hinzu1', 1);
+}
+
+if (model.get('halb1') == undefined) {
+	model.set('halb1', 3);
 }
 
 
