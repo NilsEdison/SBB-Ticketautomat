@@ -8,6 +8,9 @@ console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
 console.log(model.get("date"));
 console.log(model.get("zusatz"));
+console.log(model.get("halbeTickets"));
+console.log(model.get("volleTickets"));
+
 
 
 
@@ -154,9 +157,7 @@ updateZusatz();
 var updatePrice = function() {
 
 	var price = (model.get('price'))
-	var EURO = 1.3;
-	var c = model.get("hinzu1") ;
-	var d = (model.get("halb")/2) ;
+	var EURO = 0.7;
 
 // abfragen Datum
 	var ziel = model.get('ziel')
@@ -362,16 +363,25 @@ var updatePrice = function() {
 
 
 // neuer Wert anzeigen
-	var a = (price)*c
-var b = (price/2)*d
-var pricetot = (a+b)
 
 
+
+
+	var voll = model.get('volleTickets')
+	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
+
+	var halb = model.get('halbeTickets')
+	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
+
+		var a = (price)*voll
+	var b = (price/2)*halb
+	var pricetot = (a+b)
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
 	$('[data-bind="price_chftot"]').text(pricetot)
 	$('[data-bind="price_eur"]').text(pricetot*EURO)
+
 
 
 }
@@ -388,6 +398,8 @@ model.listen('oneway', updatePrice);
 model.listen('date', updatePrice);
 model.listen('via', updatePrice);
 model.listen('ziel', updatePrice);
+model.listen('volleTickets', updatePrice);
+model.listen('halbeTickets', updatePrice);
 
 
 
@@ -421,16 +433,18 @@ if (model.get('via') == undefined) {
 	model.set('via', 1);
 }
 
-if (model.get('hinzu1') == undefined) {
-	model.set('hinzu1', 1);
-}
-
-if (model.get('halb1') == undefined) {
-	model.set('halb1', 0);
-}
 
 if (model.get('zusatz') == undefined) {
 	model.set('zusatz', 0);
+}
+
+if (model.get('volleTickets') == undefined) {
+	model.set('volleTickets', 1);
+}
+
+
+if (model.get('halbeTickets') == undefined) {
+	model.set('halbeTickets', 0);
 }
 
 
