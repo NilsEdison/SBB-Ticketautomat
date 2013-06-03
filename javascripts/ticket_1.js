@@ -418,7 +418,7 @@ if (model.get('date') == undefined) {
 }
 
 if (model.get('via') == undefined) {
-	model.set('via', 0);
+	model.set('via', 1);
 }
 
 if (model.get('hinzu1') == undefined) {

@@ -10,35 +10,74 @@ console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
 
 
-var EURO = 1.3;
-var c = 1 ;
-var d = 0 ;
+var EURO = 0.7;
 
 
+// Volltickets
+
+$('[data-bind="hinzuVollesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('volleTickets', model.get('volleTickets') + 1);
+});
+
+$('[data-bind="wegVollesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+
+	var ticketAnzahl = model.get('volleTickets');
+	if (ticketAnzahl > 1) {
+		model.set('volleTickets', ticketAnzahl - 1);
+	}
+});
 
 
-
-// Event handling
-$('[data-bind="hinzu1"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('hinzu1', $target.data('value'));
+model.listen('volleTickets', function() {
+	var ticketAnzahl = model.get('volleTickets');
+	if (ticketAnzahl < 1) {
+		$('[data-bind="voll1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="voll1"]').text(ticketAnzahl + "x Vollpreis")
+	}
 	updatePrice();
 });
 
 
 
-$('[data-bind="halb"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('halb', $target.data('value'));
+
+// Ermässigt
+
+$('[data-bind="hinzuHalbesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('halbeTickets', model.get('halbeTickets') + 1);
+});
+
+$('[data-bind="wegHalbesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+
+	var ticketAnzahla = model.get('halbeTickets');
+	if (ticketAnzahla > 1) {
+		model.set('halbeTickets', ticketAnzahla - 1);
+	}
+});
+
+
+model.listen('halbeTickets', function() {
+	var ticketAnzahla = model.get('halbeTickets');
+	if (ticketAnzahla < 1) {
+		$('[data-bind="halb1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="halb1"]').text(ticketAnzahla+"x Ermässigt")
+	}
 	updatePrice();
 });
+
+
+
+
+
 
 var updatePrice = function() {
 
 
-// abfragen hinzufügen
-	var hinzu1 = model.get('hinzu1')
-	var halb = model.get('halb')
 
 
 // abfragen Datum
@@ -49,51 +88,6 @@ var updatePrice = function() {
 
 //Grundpreis abfrage
 
-
-   if (hinzu1 == 1){
-		c = 1; 	
-	} 
-
-	if (hinzu1 == 2){
-		c ++;
-	}
-
-	if (hinzu1 == 3){
-		c --;
-	}
-
-	if (hinzu1 == 0){
-		c == 0;
-	}
-
-	if (c==0){
-		$('[data-bind="hinzu2"]').text("hinzufügen")
-	} else{
-		$('[data-bind="hinzu2"]').text(c+"x Vollpreis")
-	}
-
-
- 	if (halb == 0){
-		d = 0; 	
-	} 
-
-   if (halb == 1){
-		d = 1; 	
-	} 
-
-	if (halb == 2){
-		d ++;
-	}
-
-	if (halb == 3){
-		d --;
-	}
-
-	if (d==0){
-		$('[data-bind="halb1"]').text("hinzufügen")
-	} else{
-		$('[data-bind="halb1"]').text(d+"x Ermässigt")
-	}
 
 
 
@@ -118,10 +112,7 @@ var updatePrice = function() {
 
 // vollpreis
 
-	
 
-
-	
 
 
 
@@ -215,16 +206,22 @@ var updatePrice = function() {
 
 
 // neuer Wert anzeigen
-	var price = parseFloat(model.get('price'))
-	var a = parseFloat(price)*c
-	var b = parseFloat(price/2)*d
-	var pricetot = parseFloat(a+b)
+	var price = parseInt(model.get('price'))
+
+	var a = parseInt(price)*model.get('volleTickets')
+
+	var b = parseInt(price/2)*model.get('halbeTickets')
+
+	var total = parseInt(a+b)
+	console.log(model.get('volleTickets'))
+	
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
-	$('[data-bind="price_chftot"]').text(pricetot)
-	$('[data-bind="price_eur"]').text(pricetot*EURO)
+	$('[data-bind="price_chftot"]').text(total)
+	$('[data-bind="price_eur"]').text(total*EURO)
 }
+
 
 updatePrice();
 
@@ -242,12 +239,12 @@ model.listen('hinzu1', updatePrice);
 model.listen('halb1', updatePrice);
 
 
-if (model.get('hinzu1') == undefined) {
-	model.set('hinzu1', 1);
+if (model.get('volleTickets') == undefined) {
+	model.set('volleTickets', 1);
 }
 
-if (model.get('halb1') == undefined) {
-	model.set('halb1', 0);
+if (model.get('halbeTickets') == undefined) {
+	model.set('halbeTickets', 0);
 }
 
 
