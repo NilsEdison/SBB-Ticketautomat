@@ -182,7 +182,13 @@
   color: rgb(87,94,105);
 }
 
+  .searchResult {
+    display: none;
+  }
 
+  #searchResult-0 {
+    display: block;
+  }
 
 
 
