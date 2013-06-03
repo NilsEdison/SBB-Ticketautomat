@@ -1,12 +1,12 @@
 
 
-$('[data-button="b"]').on('click', function(evt) {
+$('[data-button="k"]').on('click', function(evt) {
 	// b reinschreiben
 	// liste rechts ortschaften mit b
 	$('#searchResult-0').hide();
 	$('#searchResult-r').hide();
-	$('#searchResult-b').show();
-	$('#searchText').text("B_");
+	$('#searchResult-k').show();
+	$('#searchText').text("K_");
 
 });
 
@@ -14,9 +14,9 @@ $('[data-button="r"]').on('click', function(evt) {
 	// b reinschreiben
 	// liste rechts ortschaften mit b
 	$('#searchResult-0').hide();
-	$('#searchResult-b').hide();
+	$('#searchResult-k').hide();
 	$('#searchResult-r').show();
-	$('#searchText').text("Br_");
+	$('#searchText').text("Kr_");
 
 });
 
