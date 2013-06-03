@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/grid.css" media="all" type="text/css" />
   <link rel="stylesheet" href="css/spaces.css" media="all" type="text/css" />
   <link rel="stylesheet" href="css/styleguide.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/style2.css" media="all" type="text/css" />
   <!-- Eigene Stile -->
   <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
 </head>
@@ -111,11 +112,67 @@
         </div>
       </div>
 
-      <div class="col1of2 m8-top"> 
-        <div class="btn-3of10 info-blue">
+      <div class="col1of2 m8-top tab-content"> 
+        <div class="btn-3of10 info-blue tab-pane">
           <p class="txt-small ">Informationsfeld</p>
           <p class="txt-middle ptl ">Für weitere Informationen klicken Sie auf einen der Informationsbuttons rechts auf dem Bildschirm.</p>
         </div>
+         <div class="btn-3of10 info-blue tab-pane" id="help_direkt">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe Direkt</p>
+        </div>
+        <div class="btn-3of10 info-blue tab-pane" id="help_via">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe VIA</p>
+        </div>          
+        <div class="btn-3of10 info-blue tab-pane" id="help_2klasse">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe 2. Klasse</p>
+        </div>
+        <div class="btn-3of10 info-blue tab-pane" id="help_1klasse">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe 1. Klasse</p>
+        </div>
+        <div class="btn-3of10 info-blue tab-pane" id="help_vollpreis">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe Vollpreis Billett</p>
+        </div>   
+        <div class="btn-3of10 info-blue tab-pane" id="help_ermässigt">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe Ermässigtes Billett</p>
+        </div>   
+        <div class="btn-3of10 info-blue tab-pane" id="help_einfach">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe einfache Fahrt</p>
+        </div>   
+        <div class="btn-3of10 info-blue tab-pane" id="help_retour">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe retour Fahrt</p>
+        </div>   
+        <div class="btn-3of10 info-blue tab-pane" id="help_heute">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe heutiges Datum</p>
+        </div>   
+        <div class="btn-3of10 info-blue tab-pane" id="help_datum">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe anderes Datum</p>
+        </div>   
+        <div class="btn-3of10 info-blue tab-pane" id="help_einzel">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe Einzelbillette</p>
+        </div>
+        <div class="btn-3of10 info-blue tab-pane" id="help_mehrfach">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe Mehrfachbillette</p>
+        </div>
+        <div class="btn-3of10 info-blue tab-pane" id="help_keinZusatz">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe ohne Zusätze</p>
+        </div>     
+        <div class="btn-3of10 info-blue tab-pane" id="help_mitZusatz">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe mit Zusätze</p>
+        </div>                         
       </div>
 
 
@@ -132,9 +189,9 @@
       </div>
 
       <div class="colof8b m8-left"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_direkt"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top "> 
@@ -145,9 +202,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_2klasse"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -158,9 +215,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help" >
+        <a href="#help_vollpreis"><div class="btn-1of10 btn-help" >
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -171,10 +228,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_einfach"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -185,9 +241,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_heute"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -198,9 +254,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_einzel"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -211,9 +267,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_keinZusatz"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
     </div>
 
@@ -229,9 +285,9 @@
       </div>
 
       <div class="colof8b m8-left"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_via"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -242,9 +298,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_1klasse"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -255,9 +311,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_ermässigt"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -268,9 +324,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_retour"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -282,9 +338,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_datum"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -297,9 +353,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_mehrfach"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -312,9 +368,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_mitZusatz"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
     </div>
 
@@ -376,7 +432,8 @@
 
   <!-- Page specific script -->
   <script type="text/javascript" src="javascripts/ticket_1.js"></script>
-  <
+  <script type="text/javascript" src="javascripts/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
 
 
   <!-- load Clock -->
