@@ -1,16 +1,20 @@
-//get Location
 console.log(model.get("ziel"));
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
 console.log(model.get("price"));
-console.log(model.get("date"));
 console.log(model.get("via"));
 console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
+console.log(model.get("date"));
+console.log(model.get("zusatz"));
+console.log(model.get("halbeTickets"));
+console.log(model.get("volleTickets"));
+
 
 
 var EURO = 0.7;
+
 
 
 // Volltickets
@@ -65,7 +69,7 @@ model.listen('halbeTickets', function() {
 	if (ticketAnzahla < 1) {
 		$('[data-bind="halb1"]').text("hinzufügen")
 	} else {
-		$('[data-bind="halb1"]').text(ticketAnzahla+"x Ermässigt")
+		$('[data-bind="halb1"]').text(ticketAnzahla+ "x Ermässigt")
 	}
 	updatePrice();
 });
@@ -77,6 +81,8 @@ model.listen('halbeTickets', function() {
 
 var updatePrice = function() {
 
+	var price = (model.get('price'))
+	var EURO = 0.7;
 
 
 
@@ -205,23 +211,24 @@ var updatePrice = function() {
 
 
 
-// neuer Wert anzeigen
-	var price = parseInt(model.get('price'))
 
-	var a = parseInt(price)*model.get('volleTickets')
 
-	var b = parseInt(price/2)*model.get('halbeTickets')
+	var voll = model.get('volleTickets')
+	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
 
-	var total = parseInt(a+b)
-	console.log(model.get('volleTickets'))
-	
+	var halb = model.get('halbeTickets')
+	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
+
+	var a = (price)*voll
+	var b = (price/2)*halb
+	var pricetot = (a+b)
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
-	$('[data-bind="price_chftot"]').text(total)
-	$('[data-bind="price_eur"]').text(total*EURO)
-}
+	$('[data-bind="price_chftot"]').text(pricetot)
+	$('[data-bind="price_eur"]').text(pricetot*EURO)
 
+}
 
 updatePrice();
 
@@ -235,8 +242,8 @@ model.listen('oneway', updatePrice);
 model.listen('date', updatePrice);
 model.listen('via', updatePrice);
 model.listen('ziel', updatePrice);
-model.listen('hinzu1', updatePrice);
-model.listen('halb1', updatePrice);
+model.listen('volleTickets', updatePrice);
+model.listen('halbeTickets', updatePrice);
 
 
 if (model.get('volleTickets') == undefined) {

@@ -1,61 +1,113 @@
-//get Location
 console.log(model.get("ziel"));
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
 console.log(model.get("price"));
-console.log(model.get("date"));
 console.log(model.get("via"));
 console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
-console.log(model.get("nacht"));
-console.log(model.get("velo"));
-console.log(model.get("hund"));
-
+console.log(model.get("date"));
+console.log(model.get("zusatz"));
+console.log(model.get("halbeTickets"));
+console.log(model.get("volleTickets"));
 
 
 var EURO = 1.3;
-var c = 1 ;
-var d = 0 ;
-var n = 0 ;
-var v = 0 ;
-var h = 0 ;
+
+
+
+$('[data-bind="hinzuNachtTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('nachtTickets', model.get('nachtTickets') + 1);
+});
+
+$('[data-bind="wegNachtTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+
+	var ticketnacht = model.get('nachtTickets');
+	if (ticketnacht > 1) {
+		model.set('nachtTickets', ticketnacht - 1);
+	}
+});
+
+
+model.listen('nachtTickets', function() {
+	var ticketnacht = model.get('nachtTickets');
+	if (ticketnacht < 1) {
+		$('[data-bind="nacht1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="nacht1"]').text(ticketAnzahl + "x Vollpreis")
+	}
+	updatePrice();
+});
 
 
 
 
+$('[data-bind="hinzuVeloTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('veloTickets', model.get('veloTickets') + 1);
+});
 
+$('[data-bind="wegVeloTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+
+	var ticketvelo = model.get('veloTickets');
+	if (ticketvelo > 1) {
+		model.set('veloTickets', ticketvelo - 1);
+	}
+});
+
+
+model.listen('veloTickets', function() {
+	var ticketvelo = model.get('veloTickets');
+	if (ticketvelo < 1) {
+		$('[data-bind="velo1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="velo1"]').text(ticketAnzahl + "x Vollpreis")
+	}
+	updatePrice();
+});
+
+
+
+
+$('[data-bind="hinzuHundTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('hundTickets', model.get('hundTickets') + 1);
+});
+
+$('[data-bind="wegHundTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+
+	var tickethund = model.get('hundTickets');
+	if (tickethund > 1) {
+		model.set('hundTickets', tickethund - 1);
+	}
+});
+
+
+model.listen('hundTickets', function() {
+	var tickethund = model.get('hundTickets');
+	if (tickethund < 1) {
+		$('[data-bind="hund1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="hund1"]').text(ticketAnzahl + "x Vollpreis")
+	}
+	updatePrice();
+});
 
 
 
 // Event handling
-$('[data-bind="nacht"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('nacht', $target.data('value'));
-	updatePrice();
-});
 
-
-
-$('[data-bind="velo"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('velo', $target.data('value'));
-	updatePrice();
-});
-
-$('[data-bind="hund"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('hund', $target.data('value'));
-	updatePrice();
-});
 
 var updatePrice = function() {
 
 
 
-var nacht = model.get('nacht') ;
-var velo = model.get('velo') ;
-var hund = model.get('hund') ;
+var price = (model.get('price'))
+var EURO = 0.7;
 
 // abfragen hinzufügen
 
@@ -69,73 +121,7 @@ var hund = model.get('hund') ;
 //Grundpreis abfrage
 
 
-   if (nacht == 1){
-		n = 1; 	
-	} 
-
-	if (nacht== 2){
-		n ++;
-	}
-
-	if (nacht == 3){
-		n --;
-	}
-
-	if (nacht == 0){
-		n == 0;
-	}
-
-	if (n==0){
-		$('[data-bind="nacht1"]').text("hinzufügen")
-	} else{
-		$('[data-bind="nacht1"]').text(n+"x Nacht")
-	}
-
-
- 	if (velo == 0){
-		v = 0; 	
-	} 
-
-   if (velo == 1){
-		v = 1; 	
-	} 
-
-	if (velo == 2){
-		v ++;
-	}
-
-	if (velo == 3){
-		v --;
-	}
-
-	if (v==0){
-		$('[data-bind="velo1"]').text("hinzufügen")
-	} else{
-		$('[data-bind="velo1"]').text(v+"x Velobilett")
-	}
-
-
-	if (hund == 0){
-		h = 0; 	
-	} 
-
-   if (hund == 1){
-		h = 1; 	
-	} 
-
-	if (hund == 2){
-		h ++;
-	}
-
-	if (hund == 3){
-		h --;
-	}
-
-	if (h==0){
-		$('[data-bind="hund1"]').text("hinzufügen")
-	} else{
-		$('[data-bind="hund1"]').text(h+"x Hundebilett")
-	}
+  
 
 
 
@@ -257,19 +243,39 @@ var hund = model.get('hund') ;
 
 
 // neuer Wert anzeigen
-	var price = parseFloat(model.get('price'))
-	var a = parseFloat(price)*c
-	var b = parseFloat(price/2)*d
-	var x = parseFloat(price)*n
-	var y = parseFloat(price/2)*v
-	var z = parseFloat(price/2)*h
-	var pricetot = parseFloat(a+b+x+y+z)
+	var voll = model.get('volleTickets')
+	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
+
+	var halb = model.get('halbeTickets')
+	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
+	
+
+	var nacht = model.get('nachtickets')
+	$('[data-bind="nacht1"]').text(nacht + "x Vollpreis")
+
+	var velo = model.get('veloTickets')
+	$('[data-bind="velo1"]').text(velo + "x Velotickets")
+
+	var hund = model.get('hundTickets')
+	$('[data-bind="velo1"]').text(hund + "x Hundetickets")	
+
+	var a = (price)*voll
+	var b = (price/2)*halb
+	
+
+	var nachtpreis = (5)*nacht
+	var velopreis = (10)*velo
+	var hundpreis = (price/3)*hund
+
+	var pricetot = (a+b+nachtpreis+velopreis+hundpreis)
+
+
+	$('[data-bind="price_nacht"]').text(nachtpreis)
+	$('[data-bind="price_velo"]').text(velopreis)
+	$('[data-bind="price_hund"]').text(hundpreis)
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
-	$('[data-bind="price_chf2"]').text(x)
-	$('[data-bind="price_chf2"]').text(y)
-	$('[data-bind="price_chf2"]').text(z)
 	$('[data-bind="price_chftot"]').text(pricetot)
 	$('[data-bind="price_eur"]').text(pricetot*EURO)
 }
@@ -293,13 +299,15 @@ model.listen('velo', updatePrice);
 model.listen('nacht', updatePrice);
 
 
-if (model.get('hinzu1') == undefined) {
-	model.set('hinzu1', 1);
+if (model.get('volleTickets') == undefined) {
+	model.set('volleTickets', 1);
 }
 
-if (model.get('halb1') == undefined) {
-	model.set('halb1', 0);
+if (model.get('halbeTickets') == undefined) {
+	model.set('halbeTickets', 0);
 }
+
+
 
 if (model.get('nacht') == undefined) {
 	model.set('nacht', 1);
