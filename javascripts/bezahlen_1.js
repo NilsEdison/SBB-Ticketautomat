@@ -8,6 +8,11 @@ console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
 console.log(model.get("date"));
 console.log(model.get("zusatz"));
+console.log(model.get("halbeTickets"));
+console.log(model.get("volleTickets"));
+console.log(model.get("nachtTickets"));
+console.log(model.get("veloTickets"));
+console.log(model.get("hundTickets"));
 
 var EURO = 1.3;
 
@@ -330,6 +335,7 @@ if (model.get('hund') == undefined) {
 } else {
 	model.set('hund', parseInt(model.get('hund')), 10)
 }
+
 
 
 
