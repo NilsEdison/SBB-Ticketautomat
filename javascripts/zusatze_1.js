@@ -286,7 +286,7 @@ var EURO = 0.7;
 
 	var nachtpreis = parseInt((5)*nacht)
 	var velopreis = parseInt((10)*velo)
-	var hundpreis = parseInt((price/3)*hund)
+	var hundpreis = parseInt((3)*hund)
 
 	var pricetot = (a+b+nachtpreis+velopreis+hundpreis)
 
