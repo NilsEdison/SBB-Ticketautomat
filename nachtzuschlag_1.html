@@ -55,8 +55,8 @@
 
 
           <div class="row">
-            <span class="txt-middle left " data-bind="nacht1"></span>
-            <span class="txt-middle right prl " data-bind="price_chftot"></span>
+           <span class="txt-middle left " data-bind="voll1"></span>
+            <span class="txt-middle right prl" data-bind="total"></span>
           </div>
         </div>
       </div>
@@ -65,11 +65,11 @@
         <div class="btn-1of10 txt-gray">
           <div class="row">
             <span class="txt-large left">CHF</span>
-            <span class="txt-large right prl" data-bind="price_chftot"></span>
+            <span class="txt-large right prl" data-bind="total"></span>
           </div>
           <div class="row">
             <span class="euro-middle left">Euro</span>
-            <span class="euro-middle right prl" data-bind="price_eur" ></span>
+            <span class="euro-middle right prl" data-bind="total_eur" ></span>
           </div>
         </div>
       </div>
@@ -86,12 +86,20 @@
 
 <!-- Inhalt rechts-->
 
-  <div class="col1of2 m8-left">
+<div class="col1of2 m8-left">
 
 
 
-    <div class="col1of8 m8-top">
-      <div class="btn-1of10 btn-blue" data-bind="nacht" data-value="3">
+    <div class="col1of2 m8-top">
+
+        <div class="btn-1of10 txt-gray" >
+        <p class= "txt-small">hinzufügen von</p>
+        <p class= "txt-large">Nachtzuschlag</p>
+        </div>
+      </div>
+
+    <div class="col1of8 m8">
+      <div class="btn-1of10 btn-blue" data-bind="wegVollesTicket" >
         <p class="txt-small">Entfernen</p>
       <img class="mll mtm" src="Icons/Minus.png"></img>
       </div>
@@ -100,33 +108,27 @@
     <div class="col1of4 m8">
       <div class="btn-1of10 txt-gray">
         <p class="txt-small">Anzahl Vollpreis Billette</p>
-        <p class="txt-large"data-bind="nacht1"></p>
+        <p class="txt-large"data-bind="voll1"></p>
       </div>
     </div>
 
-    <div class="col1of8 m8">
-      <div class="btn-1of10 btn-blue" data-bind="nacht" data-value="2">
+
+
+    <div class="col1of8 m8-top">
+      <div class="btn-1of10 btn-blue" data-bind="hinzuVollesTicket" >
         <p class="txt-small">Hinzufügen</p>
       <img class="mll mtm" src="Icons/Plus.png"></img>
-      </div>  
-     </div>
-
-
-  </div>
+      </div>
+    </div>
 
 
 
-
-
-
-
-
-      <div class="col1of2 m8"> 
-        <div class="btn-6of10 txt-gray">
+      <div class="col1of2 m8-top"> 
+        <div class="btn-5of10 txt-gray">
         </div>
       </div>
 
-    <div class="col1of2 m8"> 
+    <div class="col1of2 m8-top"> 
         <div class="btn-1of10 btn-buy white">
         <a href="bezahlen_nacht_1.html" data-stateful-link>
         <p class="txt-small white">Abschliessen</p>
@@ -137,6 +139,7 @@
         </div>
     </div>
 
+</div>
 
 <!-- Navi -->
 

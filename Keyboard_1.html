@@ -23,15 +23,16 @@
 
     <div class="col1of1 m7">
 
-      <div class="col1of4 ">
+      <div class="col1of2 ">
         <div class="btn-1of10 navi-gray">
         <p class="txt-small">Ihr aktueller Standort</p>
-        <p class="txt-large">Zürich</p>
+        <p class="txt-large">Killwangen</p>
         </div>
      </div>
 
 
-     <div class="col1of2 m8-left">
+
+     <div class="col1of4 m8-left">
         <div class="btn-1of10 navi-gray">
       
         </div>
@@ -40,7 +41,7 @@
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
        <p class="txt-small">Aktuelle Uhrzeit</p>
-       <p class="txt-large">13:37</p>
+       <p class="txt-large" id="clock"></p>
        </div>
      </div>
   </div>
@@ -105,9 +106,11 @@
 
 
       <div class="searchResult" id="searchResult-r">
+      <a class="white" href="ticket_1.html" data-my-special-link data-bind="ziel" data-value="1">  
       <div class="btn-1of10 btn-blue m8-top">
        <p class="txt-small">Nach</p>
        <p class="txt-large">Brugg</p>
+      </a>
       </div>
 
       <div class="btn-1of10 btn-blue m8-top">
@@ -353,7 +356,45 @@
   
   </div>
 
-  <script type="text/javascript" src="javascripts/jquery.js"></script>
+  <!-- Load Javascripts after the DOM is loaded -->
+  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+  <!-- Page specific script -->
   <script type="text/javascript" src="javascripts/keyboard_1.js"></script>
+
+    <!-- load Clock -->
+  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
+
+  <script type="text/javascript">
+            // This function gets the current time and injects it into the DOM
+            function updateClock() {
+                // Gets the current time
+                var now = new Date();
+ 
+                // Get the hours, minutes and seconds from the current time
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+
+ 
+                // Format hours, minutes and seconds
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+
+                }
+ 
+                // Gets the element we want to inject the clock into
+                var elem = document.getElementById('clock');
+ 
+                // Sets the elements inner HTML value to our clock data
+                elem.innerHTML = hours + ':' + minutes;
+            }
+        </script>
+
 </body>
 </html>

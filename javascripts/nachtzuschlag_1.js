@@ -1,21 +1,40 @@
-var EURO = 1.3;
-var c = 1 ;
-var d = 0 ;
-var n = 1;
+var EURO = 0.7;
 
 model.set('price', 5.00);
 model.set('date', 4);
+model.set('volleTickets', 1);
+
+// Volltickets
+
+$('[data-bind="hinzuVollesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('volleTickets', model.get('volleTickets') + 1);
+});
+
+$('[data-bind="wegVollesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+
+	var ticketAnzahl = model.get('volleTickets');
+	if (ticketAnzahl > 1) {
+		model.set('volleTickets', ticketAnzahl - 1);
+	}
+});
 
 
-$('[data-bind="nacht"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('nacht', $target.data('value'));
+model.listen('volleTickets', function() {
+	var ticketAnzahl = model.get('volleTickets');
+	if (ticketAnzahl < 1) {
+		$('[data-bind="voll1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="voll1"]').text(ticketAnzahl + "x Vollpreis")
+	}
 	updatePrice();
 });
 
 
 var updatePrice = function() {
 
+	var price = parseInt(model.get('prize'))
 
 	var nacht = model.get('nacht')
 
@@ -26,28 +45,6 @@ var updatePrice = function() {
 
 
 
- 	if (nacht == 0){
-		n = 0; 	
-	} 
-
-   if (nacht == 1){
-		n = 1; 	
-	} 
-
-	if (nacht == 2){
-		n ++;
-	}
-
-	if (nacht == 3){
-		 n--;
-	}
-
-	if (n==0){
-		$('[data-bind="nacht1"]').text("hinzufügen")
-	} else{
-		$('[data-bind="nacht1"]').text(n+"x Zuschlag")
-	}
-
 
 
 	if (date == 4){
@@ -56,23 +53,33 @@ var updatePrice = function() {
 
 
 
+	var voll = parseInt(model.get('volleTickets'))
+	$('[data-bind="voll1"]').text(voll + "x Zuschlag")
 
 
 
-// neuer Wert anzeigen
+
+	$('[data-bind="total"]').text(voll*5)
+	$('[data-bind="total_eur"]').text(voll*5*EURO)
 
 
-	var price = parseInt(model.get('price'))
-	var total = parseInt(price)*n
 
-
-	$('[data-bind="price_chf2"]').text(n)
-	$('[data-bind="price_chftot"]').text(total)
-	$('[data-bind="price_eur"]').text(total*EURO)
 }
 
 updatePrice();
 
+
+// number.toFixed(2);
+
+model.listen('price', updatePrice);
+model.listen('klasse', updatePrice);
+model.listen('reduction', updatePrice);
+model.listen('oneway', updatePrice);
+model.listen('date', updatePrice);
+model.listen('via', updatePrice);
+model.listen('ziel', updatePrice);
+model.listen('volleTickets', updatePrice);
+model.listen('halbeTickets', updatePrice);
 
 
 

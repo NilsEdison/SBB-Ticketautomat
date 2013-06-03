@@ -1,13 +1,4 @@
-console.log(model.get("ziel"));
-console.log(model.get("oneway"));
-console.log(model.get("klasse"));
-console.log(model.get("reduction"));
-console.log(model.get("price"));
-console.log(model.get("date"));
-console.log(model.get("via"));
-console.log(model.get("hinzu1"));
-console.log(model.get("halb"));
-console.log(model.get("pricetot"));
+
 
 
 // Verlinkung Via
