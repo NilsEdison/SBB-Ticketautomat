@@ -84,7 +84,7 @@ model.listen('halbeTickets', function() {
 var updatePrice = function() {
 
 	var price = (model.get('price'))
-	var EURO = 0.7;
+
 
 
 
