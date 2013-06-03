@@ -10,9 +10,14 @@ console.log(model.get("date"));
 console.log(model.get("zusatz"));
 console.log(model.get("halbeTickets"));
 console.log(model.get("volleTickets"));
+console.log(model.get("nachtTickets"));
+console.log(model.get("veloTickets"));
+console.log(model.get("hundTickets"));
 
 
-var EURO = 1.3;
+
+var EURO = 0.7;
+
 
 
 
@@ -36,7 +41,7 @@ model.listen('nachtTickets', function() {
 	if (ticketnacht < 1) {
 		$('[data-bind="nacht1"]').text("hinzufügen")
 	} else {
-		$('[data-bind="nacht1"]').text(ticketAnzahl + "x Vollpreis")
+		$('[data-bind="nacht1"]').text(ticketnacht + "x N-Zuschlag")
 	}
 	updatePrice();
 });
@@ -64,7 +69,7 @@ model.listen('veloTickets', function() {
 	if (ticketvelo < 1) {
 		$('[data-bind="velo1"]').text("hinzufügen")
 	} else {
-		$('[data-bind="velo1"]').text(ticketAnzahl + "x Vollpreis")
+		$('[data-bind="velo1"]').text(ticketvelo + "x Vollpreis")
 	}
 	updatePrice();
 });
@@ -87,12 +92,13 @@ $('[data-bind="wegHundTicket"]').on('click', function(evt) {
 });
 
 
+
 model.listen('hundTickets', function() {
 	var tickethund = model.get('hundTickets');
 	if (tickethund < 1) {
 		$('[data-bind="hund1"]').text("hinzufügen")
 	} else {
-		$('[data-bind="hund1"]').text(ticketAnzahl + "x Vollpreis")
+		$('[data-bind="hund1"]').text(tickethund+ "x Vollpreis")
 	}
 	updatePrice();
 });
@@ -241,31 +247,46 @@ var EURO = 0.7;
 	}
 
 
+	var voll = model.get('volleTickets')
+	
+	var halb = model.get('halbeTickets')
+	
 
-// neuer Wert anzeigen
+
 	var voll = model.get('volleTickets')
 	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
 
 	var halb = model.get('halbeTickets')
 	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
-	
 
-	var nacht = model.get('nachtickets')
-	$('[data-bind="nacht1"]').text(nacht + "x Vollpreis")
 
-	var velo = model.get('veloTickets')
-	$('[data-bind="velo1"]').text(velo + "x Velotickets")
 
-	var hund = model.get('hundTickets')
-	$('[data-bind="velo1"]').text(hund + "x Hundetickets")	
+// neuer Wert anzeigen
+
+
+
+
 
 	var a = (price)*voll
 	var b = (price/2)*halb
+
 	
 
-	var nachtpreis = (5)*nacht
-	var velopreis = (10)*velo
-	var hundpreis = (price/3)*hund
+
+
+	
+	var nacht = parseInt(model.get('nachtTickets'))
+	$('[data-bind="nacht1"]').text(nacht + "x Nachtzuschlag")
+
+	var velo = model.get('veloTickets')
+	$('[data-bind="velo1"]').text(velo + "x Velobilett")
+
+	var hund = model.get('hundTickets')
+	$('[data-bind="hund1"]').text(hund + "x Hundebilett")
+
+	var nachtpreis = parseInt((5)*nacht)
+	var velopreis = parseInt((10)*velo)
+	var hundpreis = parseInt((price/3)*hund)
 
 	var pricetot = (a+b+nachtpreis+velopreis+hundpreis)
 
@@ -292,8 +313,8 @@ model.listen('oneway', updatePrice);
 model.listen('date', updatePrice);
 model.listen('via', updatePrice);
 model.listen('ziel', updatePrice);
-model.listen('hinzu1', updatePrice);
-model.listen('halb1', updatePrice);
+model.listen('volleTickets', updatePrice);
+model.listen('halbeTickets', updatePrice);
 model.listen('hund', updatePrice);
 model.listen('velo', updatePrice);
 model.listen('nacht', updatePrice);
@@ -301,24 +322,35 @@ model.listen('nacht', updatePrice);
 
 if (model.get('volleTickets') == undefined) {
 	model.set('volleTickets', 1);
+} else {
+	model.set('volleTickets', parseInt(model.get('volleTickets')), 10)
 }
+
 
 if (model.get('halbeTickets') == undefined) {
 	model.set('halbeTickets', 0);
+} else {
+	model.set('halbeTickets', parseInt(model.get('halbeTickets')), 10)
 }
 
 
 
 if (model.get('nacht') == undefined) {
 	model.set('nacht', 1);
+} else {
+	model.set('nacht', parseInt(model.get('nacht')), 10)
 }
 
 if (model.get('velo') == undefined) {
 	model.set('velo', 1);
+} else {
+	model.set('velo', parseInt(model.get('velo')), 10)
 }
 
 if (model.get('hund') == undefined) {
 	model.set('hund', 1);
+} else {
+	model.set('hund', parseInt(model.get('hund')), 10)
 }
 
 

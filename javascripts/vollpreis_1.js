@@ -10,6 +10,9 @@ console.log(model.get("date"));
 console.log(model.get("zusatz"));
 console.log(model.get("halbeTickets"));
 console.log(model.get("volleTickets"));
+console.log(model.get("nachtTickets"));
+console.log(model.get("veloTickets"));
+console.log(model.get("hundTickets"));
 
 
 
@@ -248,12 +251,15 @@ model.listen('halbeTickets', updatePrice);
 
 if (model.get('volleTickets') == undefined) {
 	model.set('volleTickets', 1);
+} else {
+	model.set('volleTickets', parseInt(model.get('volleTickets')), 10)
 }
+
 
 if (model.get('halbeTickets') == undefined) {
 	model.set('halbeTickets', 0);
+} else {
+	model.set('halbeTickets', parseInt(model.get('halbeTickets')), 10)
 }
-
-
 
 

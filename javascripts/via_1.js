@@ -3,11 +3,16 @@ console.log(model.get("oneway"));
 console.log(model.get("klasse"));
 console.log(model.get("reduction"));
 console.log(model.get("price"));
-console.log(model.get("date"));
 console.log(model.get("via"));
 console.log(model.get("hinzu1"));
 console.log(model.get("halb"));
-console.log(model.get("pricetot"));
+console.log(model.get("date"));
+console.log(model.get("zusatz"));
+console.log(model.get("halbeTickets"));
+console.log(model.get("volleTickets"));
+console.log(model.get("nachtTickets"));
+console.log(model.get("veloTickets"));
+console.log(model.get("hundTickets"));;
 
 
 
@@ -42,7 +47,18 @@ $('[data-my-special-link]').on('click', function(evt) {
   // Der Browser liest jetzt das modifizierte «href»-Attribut und öffnet die neue Seite
 });
 
-
+model.listen('price', updatePrice);
+model.listen('klasse', updatePrice);
+model.listen('reduction', updatePrice);
+model.listen('oneway', updatePrice);
+model.listen('date', updatePrice);
+model.listen('via', updatePrice);
+model.listen('ziel', updatePrice);
+model.listen('volleTickets', updatePrice);
+model.listen('halbeTickets', updatePrice);
+model.listen('hund', updatePrice);
+model.listen('velo', updatePrice);
+model.listen('nacht', updatePrice);
 
 if (ziel == 1){
 		$('[data-bind="ziel"]').text("Turgi");
