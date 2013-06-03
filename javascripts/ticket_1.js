@@ -376,21 +376,47 @@ var updatePrice = function() {
 	var halb = model.get('halbeTickets')
 	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
 
-	var nacht = model.get('nachtTickets')
-	$('[data-bind="nacht1"]').text(nacht + "x Nachtzuschlag")
 
-	var velo = model.get('veloTickets')
-	$('[data-bind="velo1"]').text(velo + "x Velobilett")
 
-	var hund = model.get('hundTickets')
-	$('[data-bind="hund1"]').text(hund + "x Hundebilett")
+// neuer Wert anzeigen
+
+
+	var nachtx = model.get('nachtTickets');
+	$('[data-bind="nacht1"]').text(nachtx + "x Nachtzuschlag")
+
+	var velox = model.get('veloTickets');
+	$('[data-bind="velo1"]').text(velox + "x Veloticket")
+
+	var hundx = model.get('hundTickets');
+	$('[data-bind="hund1"]').text(hundx + "x Hundticket")
+
+	
+
+
+
 
 	var a = (price)*voll
 	var b = (price/2)*halb
-	var pricetot = (a+b)
+	var nachtpreis = (5)*nachtx
+	var velopreis = (price/3)*velox
+
+	var hundpreis = (price/4)*hundx
+
+	var pricetot = (a+b+nachtpreis+velopreis+hundpreis)
+
+
+	
+
+
+
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
+
+	$('[data-bind="price_nacht"]').text(nachtpreis)
+	$('[data-bind="price_velo"]').text(velopreis)
+	$('[data-bind="price_hund"]').text(hundpreis)
+
 	$('[data-bind="price_chftot"]').text(pricetot)
 	$('[data-bind="price_eur"]').text(pricetot*EURO)
 
