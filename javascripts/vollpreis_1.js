@@ -20,7 +20,6 @@ var EURO = 0.7;
 
 
 
-// Volltickets
 
 $('[data-bind="hinzuVollesTicket"]').on('click', function(evt) {
 	// Ein volles Ticket hinzufügen
