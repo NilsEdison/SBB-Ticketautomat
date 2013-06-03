@@ -414,7 +414,7 @@ if (model.get('price') == undefined) {
 }
 
 if (model.get('date') == undefined) {
-	model.set('date', 1);
+	model.set('date', 4);
 }
 
 if (model.get('via') == undefined) {
@@ -432,6 +432,7 @@ if (model.get('halb1') == undefined) {
 if (model.get('zusatz') == undefined) {
 	model.set('zusatz', 0);
 }
+
 
 
 

@@ -13,7 +13,7 @@
 
 
 
-<body>
+<body onload="setInterval('updateClock()', 200);">
 
 <!-- Header -->
 
@@ -21,60 +21,63 @@
 
     <div class="col1of1 m7">
 
-      <div class="col1of4 ">
+      <div class="col3of4 ">
         <div class="btn-1of10 navi-gray">
-        <p>Ihr aktueller Standort</p>
-        <p>Zürich</p>
+        <p class="txt-small">Ihre Auswahl</p>
+        <p class="txt-large">Nachtzuschlag</p>
         </div>
      </div>
 
-      <div class="col1of4 m8-left">
-       <div class="btn-1of10 navi-gray">
-       <p>Ihr Reiseziel</p>
-       <p>Luzern</p>
-       </div>
-     </div>
 
-     <div class="col1of4 m8-left">
-        <div class="btn-1of10 navi-gray">
-      
-        </div>
-     </div>
+
+
 
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
-       <p>Aktuelle Uhrzeit</p>
-       <p>13:37</p>
+       <p class="txt-small">Aktuelle Uhrzeit</p>
+       <p class="txt-large" id="clock"></p>
        </div>
      </div>
   </div>
-
 
    
 
 <!-- Inhalt links-->
 
 
-    <div class="col1of2 m8-left">
+     <div class="col1of2 m8-left">
      
       <div class="col1of2 m8-top"> 
         <div class="btn-4of10 txt-gray">
-        <p>Ihr Ticket beinhaltet</p>
-        <p>13:37</p>
+          <p class="txt-small">Ihr Ticket beinhaltet</p>
+          <p class="txt-small">Nachtzuschläg</p>
+          <p class="txt-middle ptl" data-bind="date"></p>
+
+
+          <div class="row">
+            <span class="txt-middle left " data-bind="nacht1"></span>
+            <span class="txt-middle right prl " data-bind="price_chftot"></span>
+          </div>
         </div>
       </div>
 
       <div class="col1of2 m8-top"> 
         <div class="btn-1of10 txt-gray">
-        <p>Preis Total</p>
-        <p>13:37</p>
+          <div class="row">
+            <span class="txt-large left">CHF</span>
+            <span class="txt-large right prl" data-bind="price_chftot"></span>
+          </div>
+          <div class="row">
+            <span class="euro-middle left">Euro</span>
+            <span class="euro-middle right prl" data-bind="price_eur" ></span>
+          </div>
         </div>
       </div>
 
       <div class="col1of2 m8-top"> 
         <div class="btn-3of10 info-blue">
-        <p>Informationsfeld</p>
-        <p>13:37</p>
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Für weitere Informationen klicken Sie auf einen der Informationsbuttons rechts auf dem Bildschirm.</p>
         </div>
       </div>
 
@@ -88,23 +91,23 @@
 
 
     <div class="col1of8 m8-top">
-      <div class="btn-1of10 txt-gray">
-        <p>Entfernen</p>
-        <p>-</p>
+      <div class="btn-1of10 btn-blue" data-bind="nacht" data-value="3">
+        <p class="txt-small">Entfernen</p>
+      <img class="mll mtm" src="Icons/Minus.png"></img>
       </div>
     </div>
 
     <div class="col1of4 m8">
       <div class="btn-1of10 txt-gray">
-        <p>Anzahl Nachtzuschläge</p>
-        <p>4x</p>
+        <p class="txt-small">Anzahl Vollpreis Billette</p>
+        <p class="txt-large"data-bind="nacht1"></p>
       </div>
     </div>
 
     <div class="col1of8 m8">
-      <div class="btn-1of10 txt-gray">
-        <p>Hinzufügen</p>
-        <p>+</p>
+      <div class="btn-1of10 btn-blue" data-bind="nacht" data-value="2">
+        <p class="txt-small">Hinzufügen</p>
+      <img class="mll mtm" src="Icons/Plus.png"></img>
       </div>  
      </div>
 
@@ -120,19 +123,19 @@
 
       <div class="col1of2 m8"> 
         <div class="btn-6of10 txt-gray">
-        <p>Preis Total</p>
-        <p>13:37</p>
         </div>
       </div>
 
     <div class="col1of2 m8"> 
-        <div class="btn-1of10 btn-buy">
-        <p>Abschliessen</p>
-        <p>Bilett kaufen</p>
+        <div class="btn-1of10 btn-buy white">
+        <a href="bezahlen_nacht_1.html" data-stateful-link>
+        <p class="txt-small white">Abschliessen</p>
+
+        <p class="txt-large white">Billet kaufen</p>
+
+      </a>
         </div>
     </div>
-
-
 
 
 <!-- Navi -->
@@ -141,28 +144,77 @@
 
     <div class="col1of4 ">
       <div class="btn-1of10 navi-gray">
-      <p>Zurück</p>
-      
+      <a class="dark" href="sbb_verbindung_1.html">
+      <p class="txt-small">Zurück</p>
+      <img class="mll mtm" src="Icons/back.png"></img>
+      </a>
       </div>
     </div>
 
     <div class="col1of4 m8-left">
       <div class="btn-1of10 navi-gray">
-      <p>Abbrechen</p>
-      
+      <a class="dark" href="startseite_1.html">
+      <p class="txt-small">Abbrechen</p>
+      <img class="mll mtm" src="Icons/cancel.png"></img>
       </div>
     </div>
 
     <div class="col1of2 m8-left">
       <div class="btn-1of10 navi-gray">
-      <p>Hilfe</p>
-
+      <p class="txt-small">Hilfe</p>
+      <img class="mll mtm" src="Icons/help.png"></img>
       </div>
+      </a>
     </div>
 
   </div>
 
   
   </div>
+
+    <!-- Load Javascripts after the DOM is loaded -->
+  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+  <!-- Page specific script -->
+  <script type="text/javascript" src="javascripts/nachtzuschlag_1.js"></script>
+
+
+  <!-- load Clock -->
+  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
+
+  <script type="text/javascript">
+            // This function gets the current time and injects it into the DOM
+            function updateClock() {
+                // Gets the current time
+                var now = new Date();
+ 
+                // Get the hours, minutes and seconds from the current time
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+
+ 
+                // Format hours, minutes and seconds
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+
+                }
+ 
+                // Gets the element we want to inject the clock into
+                var elem = document.getElementById('clock');
+ 
+                // Sets the elements inner HTML value to our clock data
+                elem.innerHTML = hours + ':' + minutes;
+            }
+        </script>
+
+</body>
+</html>
+
 </body>
 </html>
