@@ -247,10 +247,7 @@ var EURO = 0.7;
 	}
 
 
-	var voll = model.get('volleTickets')
-	
-	var halb = model.get('halbeTickets')
-	
+
 
 
 	var voll = model.get('volleTickets')
@@ -269,31 +266,33 @@ var EURO = 0.7;
 
 	var a = (price)*voll
 	var b = (price/2)*halb
+	var pricetot = (a+b)
 
+
+	
 	
 
 
 
 	
-	var nacht = parseInt(model.get('nachtTickets'))
+	var nacht = model.get('nachtTickets')
+	
 	$('[data-bind="nacht1"]').text(nacht + "x Nachtzuschlag")
 
 	var velo = model.get('veloTickets')
+	
 	$('[data-bind="velo1"]').text(velo + "x Velobilett")
 
 	var hund = model.get('hundTickets')
+	
 	$('[data-bind="hund1"]').text(hund + "x Hundebilett")
 
-	var nachtpreis = parseInt((5)*nacht)
-	var velopreis = parseInt((10)*velo)
-	var hundpreis = parseInt((3)*hund)
-
-	var pricetot = (a+b+nachtpreis+velopreis+hundpreis)
 
 
-	$('[data-bind="price_nacht"]').text(nachtpreis)
-	$('[data-bind="price_velo"]').text(velopreis)
-	$('[data-bind="price_hund"]').text(hundpreis)
+	
+
+
+
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
