@@ -7,14 +7,13 @@
   <link rel="stylesheet" href="css/grid.css" media="all" type="text/css" />
   <link rel="stylesheet" href="css/spaces.css" media="all" type="text/css" />
   <link rel="stylesheet" href="css/styleguide.css" media="all" type="text/css" />
-  <link rel="stylesheet" href="css/style2.css" media="all" type="text/css" />
   <!-- Eigene Stile -->
   <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
 </head>
 
 
 
-<body onload="setInterval('updateClock()', 200);">
+<body>
 
 <!-- Header -->
 
@@ -22,22 +21,31 @@
 
     <div class="col1of1 m7">
 
-      <div class="col3of4 ">
+      <div class="col1of2 ">
         <div class="btn-1of10 navi-gray">
-        <p class="txt-small">Ihr Auswahl</p>
-        <p class="txt-large">Einzelticket</p>
+        <p class="txt-small">Ihr aktueller Standort</p>
+        <p class="txt-large">Zürich Seebach</p>
+        </div>
+     </div>
+
+
+
+     <div class="col1of4 m8-left">
+        <div class="btn-1of10 navi-gray">
+      
         </div>
      </div>
 
       <div class="col1of4 m8-left">
        <div class="btn-1of10 navi-gray">
        <p class="txt-small">Aktuelle Uhrzeit</p>
-       <p class="txt-large" id="clock"></p>
+       <p class="txt-large">13:37</p>
        </div>
      </div>
   </div>
 
 
+   
    
 
 <!-- Inhalt links-->
@@ -97,9 +105,6 @@ zugefügt werden.</p>
     
 
 
-    
-
-
 
 <!-- Navi -->
 
@@ -107,82 +112,28 @@ zugefügt werden.</p>
 
     <div class="col1of4 ">
       <div class="btn-1of10 navi-gray">
-      <a class="dark" href="startseite_1.html">
       <p class="txt-small">Zurück</p>
       <img class="mll mtm" src="Icons/back.png"></img>
-      </a>
       </div>
     </div>
 
     <div class="col1of4 m8-left">
       <div class="btn-1of10 navi-gray">
-      <a class="dark" href="startseite_1.html">
       <p class="txt-small">Abbrechen</p>
       <img class="mll mtm" src="Icons/cancel.png"></img>
       </div>
     </div>
 
     <div class="col1of2 m8-left">
-      <a href="hilfe_1.html"><div class="btn-1of10 navi-gray">
+      <div class="btn-1of10 navi-gray">
       <p class="txt-small">Hilfe</p>
       <img class="mll mtm" src="Icons/help.png"></img>
-<<<<<<< HEAD
-      </div></a>
-=======
       </div>
-      </a>
->>>>>>> 0339b97487937c981b657bb92cd3fbac8b0735aa
     </div>
 
   </div>
 
   
   </div>
-
-
-    <!-- Load Javascripts after the DOM is loaded -->
-  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
-  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
-  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
-  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
-  <script type="text/javascript" src="javascripts/keyboard_1.js"></script>
-
-  <!-- Page specific script -->
-  <script type="text/javascript" src="javascripts/zvv_ticket_1.js"></script>
-  <script type="text/javascript" src="javascripts/jquery.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
-
-
-  <!-- load Clock -->
-  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
-
-  <script type="text/javascript">
-            // This function gets the current time and injects it into the DOM
-            function updateClock() {
-                // Gets the current time
-                var now = new Date();
- 
-                // Get the hours, minutes and seconds from the current time
-                var hours = now.getHours();
-                var minutes = now.getMinutes();
-
- 
-                // Format hours, minutes and seconds
-                if (hours < 10) {
-                    hours = "0" + hours;
-                }
-                if (minutes < 10) {
-                    minutes = "0" + minutes;
-
-                }
- 
-                // Gets the element we want to inject the clock into
-                var elem = document.getElementById('clock');
- 
-                // Sets the elements inner HTML value to our clock data
-                elem.innerHTML = hours + ':' + minutes;
-            }
-        </script>
-
 </body>
 </html>
