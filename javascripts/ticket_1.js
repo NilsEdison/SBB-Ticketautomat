@@ -486,19 +486,19 @@ if (model.get('halbeTickets') == undefined) {
 
 
 if (model.get('nacht') == undefined) {
-	model.set('nacht', 1);
+	model.set('nacht', 0);
 } else {
 	model.set('nacht', parseInt(model.get('nacht')), 10)
 }
 
 if (model.get('velo') == undefined) {
-	model.set('velo', 1);
+	model.set('velo', 0);
 } else {
 	model.set('velo', parseInt(model.get('velo')), 10)
 }
 
 if (model.get('hund') == undefined) {
-	model.set('hund', 1);
+	model.set('hund', 0);
 } else {
 	model.set('hund', parseInt(model.get('hund')), 10)
 }
