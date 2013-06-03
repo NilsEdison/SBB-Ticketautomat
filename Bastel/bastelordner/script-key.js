@@ -20,16 +20,16 @@ var selectNav = function(tabId) {
 }
 
 var selectTab = function(tabId) {
-  var oldTab = $(".tab-pane.active");
+  var oldTab = $(".tab-pane-key.active");
   var newTab = $('#'+tabId);
 
   newTab.addClass("active");
   newTab.css({
-    flash: newTab.width()
+    left: newTab.width()
   });
 
   oldTab.animate({
-    flash: -oldTab.width()
+    left: -oldTab.width()
   }, {
     duration: 300,
     complete: function() {
@@ -38,7 +38,7 @@ var selectTab = function(tabId) {
   });
 
   newTab.animate({
-    flash: 0
+    left: 0
   }, {
     duration: 300
   });

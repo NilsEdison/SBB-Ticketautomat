@@ -9,6 +9,20 @@
   <link rel="stylesheet" href="css/styleguide.css" media="all" type="text/css" />
   <!-- Eigene Stile -->
   <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
+
+
+
+  <style type="text/css">
+
+  .searchResult {
+    display: none;
+  }
+
+  #searchResult-0 {
+    display: block;
+  }
+  </style>
+
 </head>
 
 
@@ -53,7 +67,7 @@
      
       <div class="btn-2of10 txt-gray m8-top">
        <p class="txt-small">Aktuelle Suche</p>
-       <p class="txt-large">Br_</p>
+       <p class="txt-large" id="searchText">Bitte Ort eingeben</p>
       </div>
 
       <div class="btn-3of10 info-blue m8-top">
@@ -68,7 +82,15 @@
 
 
     <div class="col1of2 m8-left">
-     
+     <div class="searchResult" id="searchResult-b">
+            <div class="btn-1of10 btn-blue m8-top">
+       <p class="txt-small">Nach</p>
+       <p class="txt-large">Baden</p>
+      </div>
+            <div class="btn-1of10 btn-blue m8-top">
+       <p class="txt-small">Nach</p>
+       <p class="txt-large">Basel</p>
+      </div>
       <div class="btn-1of10 btn-blue m8-top">
        <p class="txt-small">Nach</p>
        <p class="txt-large">Brugg</p>
@@ -83,8 +105,28 @@
        <p class="txt-small">Nach</p>
        <p class="txt-large">Brooklyn</p>
       </div>
+    </div>
 
-      <div class="btn-2of10 txt-gray m8-top">
+
+         <div class="searchResult" id="searchResult-r">
+      <div class="btn-1of10 btn-blue m8-top">
+       <p class="txt-small">Nach</p>
+       <p class="txt-large">Brugg</p>
+      </div>
+
+      <div class="btn-1of10 btn-blue m8-top">
+       <p class="txt-small">Nach</p>
+       <p class="txt-large">Brig</p>
+      </div>
+
+      <div class="btn-1of10 btn-blue m8-top">
+       <p class="txt-small">Nach</p>
+       <p class="txt-large">Brooklyn</p>
+      </div>
+    </div>
+
+
+      <div class="searchResult btn-5of10 txt-gray m8-top" id="searchResult-0">
         <p>&nbsp;</p>
       </div>
 
@@ -115,7 +157,7 @@
       </div>
 
       <div class="colkey1 m8-left">
-        <div class="btn-1of10 btn-blue">
+        <div class="btn-1of10 btn-blue" data-button="r">
           <p class="txt-small">r</p>
         </div>
       </div>
@@ -262,7 +304,7 @@
       </div>
 
        <div class="colkey1 m8-left">
-        <div class="btn-1of10 btn-blue">
+        <div class="btn-1of10 btn-blue" data-button="b">
           <p class="txt-small">b</p>
         </div>
       </div>
@@ -318,5 +360,8 @@
 
   
   </div>
+
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="Keyboard_1.js"></script>
 </body>
 </html>
