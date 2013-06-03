@@ -14,9 +14,7 @@ var EURO = 1.3;
 var updatePrice = function() {
 
 	var price = (model.get('price'))
-	var EURO = 1.3;
-	var c = model.get("hinzu1") ;
-	var d = (model.get("halb")/2) ;
+	var EURO = 0.7;
 
 // abfragen Datum
 	var ziel = model.get('ziel')
@@ -222,11 +220,28 @@ var updatePrice = function() {
 
 
 // neuer Wert anzeigen
-	var a = (price)*c
-var b = (price/2)*d
-var pricetot = (a+b)
 
 
+
+
+	var voll = model.get('volleTickets')
+	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
+
+	var halb = model.get('halbeTickets')
+	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
+
+	var nacht = model.get('nachtTickets')
+	$('[data-bind="nacht1"]').text(nacht + "x Nachtzuschlag")
+
+	var velo = model.get('veloTickets')
+	$('[data-bind="velo1"]').text(velo + "x Velobilett")
+
+	var hund = model.get('hundTickets')
+	$('[data-bind="hund1"]').text(hund + "x Hundebilett")
+
+	var a = (price)*voll
+	var b = (price/2)*halb
+	var pricetot = (a+b)
 
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
@@ -234,6 +249,88 @@ var pricetot = (a+b)
 	$('[data-bind="price_eur"]').text(pricetot*EURO)
 
 
+
 }
 
 updatePrice();
+
+
+// number.toFixed(2);
+
+model.listen('price', updatePrice);
+model.listen('klasse', updatePrice);
+model.listen('reduction', updatePrice);
+model.listen('oneway', updatePrice);
+model.listen('date', updatePrice);
+model.listen('via', updatePrice);
+model.listen('ziel', updatePrice);
+model.listen('volleTickets', updatePrice);
+model.listen('halbeTickets', updatePrice);
+model.listen('hund', updatePrice);
+model.listen('velo', updatePrice);
+model.listen('nacht', updatePrice);
+
+/**
+ * Initialize model
+ */
+if (model.get('klasse') == undefined) {
+	model.set('klasse', 0);
+}
+
+if (model.get('reduction') == undefined) {
+	model.set('reduction', 0);
+}
+
+if (model.get('oneway') == undefined) {
+	model.set('oneway', 0);
+}
+
+if (model.get('price') == undefined) {
+	model.set('price', 34.90);
+}
+
+if (model.get('date') == undefined) {
+	model.set('date', 4);
+}
+
+if (model.get('via') == undefined) {
+	model.set('via', 1);
+}
+
+
+if (model.get('volleTickets') == undefined) {
+	model.set('volleTickets', 1);
+} else {
+	model.set('volleTickets', parseInt(model.get('volleTickets')), 10)
+}
+
+
+if (model.get('halbeTickets') == undefined) {
+	model.set('halbeTickets', 0);
+} else {
+	model.set('halbeTickets', parseInt(model.get('halbeTickets')), 10)
+}
+
+
+
+if (model.get('nacht') == undefined) {
+	model.set('nacht', 1);
+} else {
+	model.set('nacht', parseInt(model.get('nacht')), 10)
+}
+
+if (model.get('velo') == undefined) {
+	model.set('velo', 1);
+} else {
+	model.set('velo', parseInt(model.get('velo')), 10)
+}
+
+if (model.get('hund') == undefined) {
+	model.set('hund', 1);
+} else {
+	model.set('hund', parseInt(model.get('hund')), 10)
+}
+
+
+
+
