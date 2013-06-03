@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ticketautomat</title>
+  <link rel="stylesheet" href="css/reset.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/grid.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/spaces.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/styleguide.css" media="all" type="text/css" />
+  <!-- Eigene Stile -->
+  <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
+</head>
+
+
+
+<body onload="setInterval('updateClock()', 200);">
+
+<!-- Header -->
+
+  <div id="app-container">
+
+    <div class="col1of1 m7">
+
+      <div class="col1of4 ">
+        <div class="btn-1of10 navi-gray">
+        <p class="txt-small">Ihr aktueller Standort</p>
+        <p class="txt-large">Killwangen</p>
+        </div>
+     </div>
+
+      <div class="col1of4 m8-left">
+       <div class="btn-1of10 navi-gray">
+       <p class="txt-small">Ihr Reiseziel</p>
+       <p class="txt-large" data-bind="ziel"></p>
+       </div>
+     </div>
+
+     <div class="col1of4 m8-left">
+        <div class="btn-1of10 navi-gray">
+      
+        </div>
+     </div>
+
+      <div class="col1of4 m8-left">
+       <div class="btn-1of10 navi-gray">
+       <p class="txt-small">Aktuelle Uhrzeit</p>
+       <p class="txt-large" id="clock"></p>
+       </div>
+     </div>
+  </div>
+
+   
+
+<!-- Inhalt links-->
+
+
+  <div class="col1of2 m8-left">
+     
+      <div class="col1of2 m8-top"> 
+        <div class="btn-4of10 txt-gray">
+          <p class="txt-small">Ihr Ticket beinhaltet</p>
+          <p class="txt-small">Reise via</p>
+          <p class="txt-middle" data-bind="via"></p>
+          <p class="txt-middle ptl" data-bind="date"></p>
+          <p class="txt-middle" data-bind="oneway1"></p>
+          <p class="txt-middle" data-bind="klasse1"></p>
+
+          <div class="row mtl">
+            <span class="txt-middle left " data-bind="voll1"></span>
+            <span class="txt-middle right prl" data-bind="price_chf1"></span>
+          </div>
+          <div class="row">
+            <span class="txt-middle left " data-bind="halb1"></span>
+            <span class="txt-middle right prl " data-bind="price_chf2"></span>
+          </div>
+
+
+          <br></br>
+          <div class="row">
+            <span class="txt-middle left " data-bind="nacht1"></span>
+            <span class="txt-middle right prl " data-bind="price_nacht"></span>
+          </div>
+          <div class="row">
+            <span class="txt-middle left " data-bind="velo1"></span>
+            <span class="txt-middle right prl " data-bind="price_velo"></span>
+          </div>
+          <div class="row">
+            <span class="txt-middle left " data-bind="hund1"></span>
+            <span class="txt-middle right prl " data-bind="price_hund"></span>
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+      <div class="col1of2 m8-top"> 
+        <div class="btn-1of10 txt-gray">
+          <div class="row">
+            <span class="txt-large left">CHF</span>
+            <span class="txt-large right prl" data-bind="price_chftot"></span>
+          </div>
+          <div class="row">
+            <span class="euro-middle left">Euro</span>
+            <span class="euro-middle right prl" data-bind="price_eur" ></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col1of2 m8-top"> 
+        <div class="btn-3of10 info-blue">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Für weitere Informationen klicken Sie auf einen der Informationsbuttons rechts auf dem Bildschirm.</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+<!-- Inhalt rechts-->
+
+  <div class="col1of2 m8-left">
+
+  	   <div class="col1of2 m8-top"> 
+        <div class="btn-1of10 txt-gray" >
+        <p class= "txt-small">hinzufügen von</p>
+        <p class= "txt-large">Nachtzuschlag</p>
+        </div>
+      </div>
+
+       <div class="col1of8 m8-top">
+      <div class="btn-1of10 btn-blue" data-bind="wegNachtTicket">
+        <p class="txt-small">Entfernen</p>
+      <img class="mll mtm" src="Icons/Minus.png"></img>
+      </div>
+    </div>
+
+    <div class="col1of4 m8">
+      <div class="btn-1of10 txt-gray">
+        <p class="txt-small">Anzahl Vollpreis Billette</p>
+        <p class="txt-large"data-bind="nacht1"></p>
+      </div>
+    </div>
+
+    <div class="col1of8 m8">
+      <div class="btn-1of10 btn-blue" data-bind="hinzuNachtTicket">
+        <p class="txt-small">Hinzufügen</p>
+      <img class="mll mtm" src="Icons/Plus.png"></img>
+      </div>  
+     </div>
+
+    <div class="col1of2 m8-top"> 
+        <div class="btn-1of10 txt-gray">
+        <p class="txt-small">hinzufügen von</p>
+        <p class= "txt-large">Hundebillette</p>
+        </div>
+      </div>
+
+    <div class="col1of8 m8-top">
+      <div class="btn-1of10 btn-blue"data-bind="wegVeloTicket">
+        <p class="txt-small">weniger</p>
+        <img class="mll mtm" src="Icons/Minus.png"></img>
+      </div>
+    </div>
+
+    <div class="col1of4 m8">
+      <div class="btn-1of10 txt-gray">
+        <p class="txt-small">Anzahl Velobilette</p>
+        <p class= "txt-large" data-bind="velo1"></p>
+      </div>
+    </div>
+
+    <div class="col1of8 m8">
+      <div class="btn-1of10 btn-blue" data-bind="hinzuVeloTicket">
+        <p class="txt-small">mehr</p>
+        <img class="mll mtm" src="Icons/Plus.png"></img>
+      </div>  
+     </div>
+     
+    <div class="col1of2 m8-top"> 
+        <div class="btn-1of10 txt-gray">
+        <p class="txt-small">hinzufügen von</p>
+        <p class= "txt-large">Velobillette</p>
+        </div>
+      </div>
+
+    <div class="col1of8 m8-top">
+      <div class="btn-1of10 btn-blue" data-bind="wegHundTicket">
+        <p class="txt-small">weniger</p>
+        <img class="mll mtm" src="Icons/Minus.png"></img>
+      </div>
+    </div>
+
+    <div class="col1of4 m8">
+      <div class="btn-1of10 txt-gray">
+        <p class="txt-small">Anzahl Hundebilette</p>
+        <p class= "txt-large"data-bind="hund1"></p>
+      </div>
+    </div>
+
+    <div class="col1of8 m8">
+      <div class="btn-1of10 btn-blue" data-bind="hinzuHundTicket">
+        <p class="txt-small">mehr</p>
+        <img class="mll mtm" src="Icons/Plus.png"></img>
+      </div>  
+     </div>
+
+  </div>
+
+
+
+
+
+
+
+
+      <div class="col1of2 m8"> 
+        <div class="btn-1of10 txt-gray">
+        </div>
+      </div>
+
+    <div class="col1of2 m8"> 
+        <div class="btn-1of10 btn-buy">
+        <p class="txt-small">Abschliessen</p>
+        <p class="txt-large"><a class="white" href="zvv_ticket_1.html" data-stateful-link>Billet hinzufügen</a></p>
+        </div>
+    </div>
+
+
+
+
+<!-- Navi -->
+
+  <div class="col1of1 m8">
+
+    <div class="col1of4 ">
+      <div class="btn-1of10 navi-gray">
+      <a class="dark" href="sbb_verbindung_1.html">
+      <p class="txt-small">Zurück</p>
+      <img class="mll mtm" src="Icons/back.png"></img>
+      </a>
+      </div>
+    </div>
+
+    <div class="col1of4 m8-left">
+      <div class="btn-1of10 navi-gray">
+      <a class="dark" href="startseite_1.html">
+      <p class="txt-small">Abbrechen</p>
+      <img class="mll mtm" src="Icons/cancel.png"></img>
+      </div>
+    </div>
+
+    <div class="col1of2 m8-left">
+      <div class="btn-1of10 navi-gray">
+      <p class="txt-small">Hilfe</p>
+      <img class="mll mtm" src="Icons/help.png"></img>
+      </div>
+      </a>
+    </div>
+
+  </div>
+
+  
+  </div>
+
+
+    <!-- Load Javascripts after the DOM is loaded -->
+  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+  <!-- Page specific script -->
+  <script type="text/javascript" src="javascripts/zusatze_1.js"></script>
+
+
+  <!-- load Clock -->
+  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
+
+  <script type="text/javascript">
+            // This function gets the current time and injects it into the DOM
+            function updateClock() {
+                // Gets the current time
+                var now = new Date();
+ 
+                // Get the hours, minutes and seconds from the current time
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+
+ 
+                // Format hours, minutes and seconds
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+
+                }
+ 
+                // Gets the element we want to inject the clock into
+                var elem = document.getElementById('clock');
+ 
+                // Sets the elements inner HTML value to our clock data
+                elem.innerHTML = hours + ':' + minutes;
+            }
+        </script>
+
+</body>
+</html>
