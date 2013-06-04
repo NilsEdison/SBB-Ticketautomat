@@ -109,6 +109,10 @@
           <p class="txt-small ">Informationsfeld</p>
           <p class="txt-middle ptl ">Hilfe Direkt</p>
         </div>
+        <div class="btn-3of10 info-blue tab-pane" id="help_zone">
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Hilfe Zonenplan</p>
+        </div>
         <div class="btn-3of10 info-blue tab-pane" id="help_via">
           <p class="txt-small ">Informationsfeld</p>
           <p class="txt-middle ptl ">Hilfe VIA</p>
@@ -167,7 +171,6 @@
     </div>
 
 <!-- Inhalt rechts-->
-<!-- Inhalt rechts-->
 
       <div class="col1of2 m8"> 
         
@@ -181,9 +184,9 @@
         </div>
 
         <div class="colof8b m8"> 
-          <div class="btn-1of10 btn-help">
+          <a href="#help_zone"><div class="btn-1of10 btn-help">
           <img class="mtl_h mll_h" src="Icons/info.png"></img>
-          </div>
+          </div></a>
         </div>
       </div>
 
@@ -197,9 +200,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_2klasse"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -210,64 +213,65 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help" >
+        <a href="#help_vollpreis"><div class="btn-1of10 btn-help" >
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-red" data-bind="oneway" data-value="0">
-        <p class="txt-small">Gültig für</p>
-        <p class="txt-large">1 h</p>
+        <p class="txt-small">gültig für</p>
+        <p class="txt-large">1h</p>
         </div>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_einfach"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-red">
         <p class="txt-small">gültig am</p>
-        <p class="txt-large">25.05.12</p>
+        <p class="txt-large" data-bind="date"></p>
         </div>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_heute"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-red">
         <p class="txt-small">Anzahl Bilette</p>
-        <p class="txt-large">1x</p>
+        <p class="txt-large" data-bind="anzahl"></p>
         </div>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_einzel"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-red">
+        <a class="white" >
         <p class="txt-small">Zusätze hinzugefügt</p>
-           <img class="mll mtm" src="Icons/mond.png"></img>
-           <img class="mll mtm" src="Icons/velo.png"></img>
-           <img class="mll mtm" src="Icons/hund.png"></img>
+           <img class="mll mtm" src="Icons/mond.png" data-bind="show_nacht"></img>
+           <img class="mll mtm" src="Icons/velo.png" data-bind="show_velo"></img>
+           <img class="mll mtm" src="Icons/hund.png"data-bind="show_hund"></img>
         </div>
+      </a>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_keinZusatz"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
     </div>
     
@@ -283,9 +287,9 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_1klasse"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
@@ -296,56 +300,56 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_ermässigt"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-blue" data-bind="oneway" data-value="1">
-        <p class="txt-small">Gültig für</p>
+        <p class="txt-small">gültig für</p>
         <p class="txt-large">24h</p>
         </div>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_retour"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-blue">
-        <a class="white" href="zvv_calendar_1.html" data-stateful-link>
-        <p class="txt-small">gültig am</p>
-        <p class="txt-large">wählen </p>
+        <a href="calendar_1.html" data-stateful-link>
+        <p class="txt-small white">gültig am</p>
+        <p class="txt-large white">wählen </p>
         </div>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_datum"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-blue">
-        <a class="white" href="zvv_vollpreis_1.html" data-stateful-link>
-        <p class="txt-small">Anzahl Bilette</p>
-           <img class="txt-large" src="Icons/mehr.png"></img>
+        <a href="vollpreis_1.html" data-stateful-link>
+        <p class="txt-small white">Anzahl Bilette</p>
+        <img class="txt-large" src="Icons/mehr.png"></img>
+        </a>
         </div>
-      </a>
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_mehrfach"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-blue">
-        <a class="white" href="zvv_zusatze_1.html" data-stateful-link>
+        <a class="white" href="zusatze_1.html" data-stateful-link>
         <p class="txt-small">Zusätze hinzugefügt</p>
            <img class="mll mtm" src="Icons/mond.png"></img>
            <img class="mll mtm" src="Icons/velo.png"></img>
@@ -355,17 +359,19 @@
       </div>
 
       <div class="colof8b m8"> 
-        <div class="btn-1of10 btn-help">
+        <a href="#help_mitZusatz"><div class="btn-1of10 btn-help">
         <img class="mtl_h mll_h" src="Icons/info.png"></img>
-        </div>
+        </div></a>
       </div>
     </div>
 
     <div class="col1of2 m8"> 
-        <div class="btn-1of10 btn-buy">
-        <a class="white" href="zvv_bezahlen_1.html" data-stateful-link>
-        <p class="txt-small">Abschliessen</p>
-        <a class="white" href="Ticket_bezahlen_1.html" data-stateful-link><p class="txt-large">Billet kaufen</p></a>
+        <div class="btn-1of10 btn-buy white">
+        <a href="bezahlen_1.html" data-stateful-link>
+        <p class="txt-small white">Abschliessen</p>
+
+        <p class="txt-large white">Billet kaufen</p>
+
       </a>
         </div>
     </div>
