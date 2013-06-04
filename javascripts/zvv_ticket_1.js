@@ -193,12 +193,13 @@ var updatePrice = function() {
 // Retour definieren
 
 	if (oneway == 1){
-		price = price*2;
-		$('[data-bind="oneway1"]').text("Retour")
+		ziel == 2;
+		$('[data-bind="oneway1"]').text("Gültig für 24h")
 	}
 
 	if (oneway == 0){
-		$('[data-bind="oneway1"]').text("Einfache Fahrt")
+		ziel == 1
+		$('[data-bind="oneway1"]').text("Gültig für 1h")
 	}
 
 //Klasse definieren
