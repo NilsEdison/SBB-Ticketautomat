@@ -250,6 +250,18 @@ var updatePrice = function() {
 		$('[data-bind="date"]').text("10.06.13")
 	}
 
+	if (date == 1){
+		$('[data-bind="date"]').text("11.06.13")
+	}
+
+	if (date == 2){
+		$('[data-bind="date"]').text("12.06.13")
+	}
+
+	if (date == 3){
+		$('[data-bind="date"]').text("13.06.13")
+	}
+
 	if (date == 8){
 		$('[data-bind="date"]').text("14.06.13")
 	}
@@ -319,7 +331,6 @@ var updatePrice = function() {
 	}
 
 
-
 // Ziel definieren
 
 	if (ziel == 1){
@@ -376,10 +387,8 @@ var updatePrice = function() {
 	var halb = model.get('halbeTickets')
 	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
 
-
-
-// neuer Wert anzeigen
-
+	var anzahl = voll+halb
+	$('[data-bind="anzahl"]').text(anzahl + "x")
 
 	var nachtx = model.get('nachtTickets');
 	$('[data-bind="nacht1"]').text(nachtx + "x Nachtzuschlag")
@@ -397,12 +406,50 @@ var updatePrice = function() {
 
 	var a = (price)*voll
 	var b = (price/2)*halb
+
+	
+
 	var nachtpreis = (5)*nachtx
 	var velopreis = (price/3)*velox
 
 	var hundpreis = (price/4)*hundx
 
 	var pricetot = (a+b+nachtpreis+velopreis+hundpreis)
+	var pricetoteuro = (pricetot*EURO)
+
+
+	
+
+	function runden1 (a){
+		return a.toFixed(2)
+	}
+
+	function runden2 (b){
+		return b.toFixed(2)
+	}
+
+	function runden3 (nachtreis){
+		return nachtpreis.toFixed(2)
+	}
+
+	function runden4 (velopreis){
+		return velopreis.toFixed(2)
+	}
+
+	function runden5 (hundpreis){
+		return hundpreis.toFixed(2)
+	}
+
+	function runden6 (pricetot){
+		return pricetot.toFixed(2)
+	}
+
+
+	function runden7 (pricetoteuro){
+		return pricetoteuro.toFixed(2)
+	}
+
+
 
 
 	
@@ -410,9 +457,14 @@ var updatePrice = function() {
 
 
 
-	$('[data-bind="price_chf1"]').text(a)
-	$('[data-bind="price_chf2"]').text(b)
 
+
+if (halb >= 1){
+		$('[data-bind="show_halb"]').show()
+}
+else {
+		$('[data-bind="show_halb"]').hide()
+}
 
 
 
@@ -437,13 +489,15 @@ else {
 		$('[data-bind="show_hund"]').hide()
 }
 
-	
-	$('[data-bind="price_nacht"]').text(nachtpreis)
-	$('[data-bind="price_velo"]').text(velopreis)
-	$('[data-bind="price_hund"]').text(hundpreis)
+	$('[data-bind="price_chf1"]').text(runden1(a))
+	$('[data-bind="price_chf2"]').text(runden2(b))
 
-	$('[data-bind="price_chftot"]').text(pricetot)
-	$('[data-bind="price_eur"]').text(pricetot*EURO)
+	$('[data-bind="price_nacht"]').text(runden3(nachtpreis))
+	$('[data-bind="price_velo"]').text(runden4(velopreis))
+	$('[data-bind="price_hund"]').text(runden5(hundpreis))
+
+	$('[data-bind="price_chftot"]').text(runden6(pricetot))
+	$('[data-bind="price_eur"]').text(runden7(pricetoteuro))
 
 
 

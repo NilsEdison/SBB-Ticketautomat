@@ -71,7 +71,7 @@
             <span class="txt-middle left " data-bind="voll1"></span>
             <span class="txt-middle right prl" data-bind="price_chf1"></span>
           </div>
-          <div class="row">
+          <div class="row" data-bind="show_halb">
             <span class="txt-middle left " data-bind="halb1"></span>
             <span class="txt-middle right prl " data-bind="price_chf2"></span>
           </div>
@@ -250,7 +250,7 @@
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-red">
         <p class="txt-small">Anzahl Bilette</p>
-        <p class="txt-large">1x</p>
+        <p class="txt-large" data-bind="anzahl"></p>
         </div>
       </div>
 
@@ -261,9 +261,9 @@
       </div>
 
       <div class="colof8a m8-top"> 
-        <div class="btn-1of10 btn-red" data-bind="zusatz" data-value="0">
+        <div class="btn-1of10 btn-red" >
         <p class="txt-small">Zusätze hinzugefügt</p>
-        <p class="txt-large">keine</p>
+        <p class="txt-large" data-bind="date"></p>
         </div>
       </div>
 
