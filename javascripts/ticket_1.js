@@ -413,6 +413,31 @@ var updatePrice = function() {
 	$('[data-bind="price_chf1"]').text(a)
 	$('[data-bind="price_chf2"]').text(b)
 
+
+
+
+if (nachtx >= 1){
+		$('[data-bind="show_nacht"]').show()
+}
+else {
+		$('[data-bind="show_nacht"]').hide()
+}
+
+if (velox >= 1){
+		$('[data-bind="show_velo"]').show()
+}
+else {
+		$('[data-bind="show_velo"]').hide()
+}
+
+if (hundx >= 1){
+		$('[data-bind="show_hund"]').show()
+}
+else {
+		$('[data-bind="show_hund"]').hide()
+}
+
+	
 	$('[data-bind="price_nacht"]').text(nachtpreis)
 	$('[data-bind="price_velo"]').text(velopreis)
 	$('[data-bind="price_hund"]').text(hundpreis)
@@ -438,9 +463,9 @@ model.listen('via', updatePrice);
 model.listen('ziel', updatePrice);
 model.listen('volleTickets', updatePrice);
 model.listen('halbeTickets', updatePrice);
-model.listen('hund', updatePrice);
-model.listen('velo', updatePrice);
-model.listen('nacht', updatePrice);
+model.listen('nachtTickets', updatePrice);
+model.listen('veloTickets', updatePrice);
+model.listen('hundTickets', updatePrice);
 
 /**
  * Initialize model
@@ -485,22 +510,22 @@ if (model.get('halbeTickets') == undefined) {
 
 
 
-if (model.get('nacht') == undefined) {
-	model.set('nacht', 0);
+if (model.get('nachtTickets') == undefined) {
+	model.set('nachtTickets', 0);
 } else {
-	model.set('nacht', parseInt(model.get('nacht')), 10)
+	model.set('nachtTickets', parseInt(model.get('nachtTickets')), 10)
 }
 
-if (model.get('velo') == undefined) {
-	model.set('velo', 0);
+if (model.get('veloTickets') == undefined) {
+	model.set('veloTickets', 0);
 } else {
-	model.set('velo', parseInt(model.get('velo')), 10)
+	model.set('veloTickets', parseInt(model.get('veloTickets')), 10)
 }
 
-if (model.get('hund') == undefined) {
-	model.set('hund', 0);
+if (model.get('hundTickets') == undefined) {
+	model.set('hundTickets', 0);
 } else {
-	model.set('hund', parseInt(model.get('hund')), 10)
+	model.set('hundTickets', parseInt(model.get('hundTickets')), 10)
 }
 
 

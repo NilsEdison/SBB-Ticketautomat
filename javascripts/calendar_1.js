@@ -32,18 +32,7 @@ $('[data-my-special-link]').on('click', function(evt) {
 });
 
 
-model.listen('price', updatePrice);
-model.listen('klasse', updatePrice);
-model.listen('reduction', updatePrice);
-model.listen('oneway', updatePrice);
-model.listen('date', updatePrice);
-model.listen('via', updatePrice);
-model.listen('ziel', updatePrice);
-model.listen('volleTickets', updatePrice);
-model.listen('halbeTickets', updatePrice);
-model.listen('hund', updatePrice);
-model.listen('velo', updatePrice);
-model.listen('nacht', updatePrice);
+
 
 if (ziel == 1){
 		$('[data-bind="ziel"]').text("Turgi");

@@ -36,8 +36,8 @@ var ziel = model.get('ziel')
 
 $('[data-my-special-link]').on('click', function(evt) {
 	// URL des Links auslesen (wo geht es jetzt dann gleich hin?
-	var $target = $(evt.currentTarget);
-	model.set('date', $target.data('value'));
+	// var $target = $(evt.currentTarget);
+	// model.set('date', $target.data('value'));
 
   var uri = new URI(evt.currentTarget.href);
   // Alle Werte, die im Model gespeichert sind diesem Link anfügen
