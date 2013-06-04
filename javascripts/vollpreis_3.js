@@ -77,6 +77,7 @@ model.listen('halbeTickets', function() {
 });
 
 
+
 var updatePrice = function() {
 
 	var price = (model.get('price'))
@@ -114,28 +115,28 @@ var updatePrice = function() {
 
 	if (oneway == 1){
 		price = price*2;
-		$('[data-bind="oneway1"]').text("Retour")
+		$('[data-bind="oneway1"]').text("Round-trip")
 	}
 
 	if (oneway == 0){
-		$('[data-bind="oneway1"]').text("Einfache Fahrt")
+		$('[data-bind="oneway1"]').text("One Way")
 	}
 
 //Klasse definieren
 
 	if (klasse == 1){
 		price = price*2;
-		$('[data-bind="klasse1"]').text("1. Klasse")
+		$('[data-bind="klasse1"]').text("1. Class")
 	}
 
 	if (klasse == 0){
-		$('[data-bind="klasse1"]').text("2. Klasse")
+		$('[data-bind="klasse1"]').text("2. Class")
 	}
 
 //Via definieren
 
 	if (via == 0){
-		$('[data-bind="via"]').text("direkt")
+		$('[data-bind="via"]').text("direct")
 	}
 
 
@@ -259,43 +260,43 @@ var updatePrice = function() {
 // Ziel definieren
 
 	if (ziel == 1){
-		$('[data-bind="ziel"]').text("Turgi");
+		$('[data-bind="ziel"]').text("Zürich Mainstation");
 		model.set('price', 10.20);
 	}
 
 	if (ziel == 2){
-		$('[data-bind="ziel"]').text("Baden")
+		$('[data-bind="ziel"]').text("Zürich Airport")
 		model.set('price', 16.40);
 	}
 
 	if (ziel == 3){
-		$('[data-bind="ziel"]').text("Brugg")
+		$('[data-bind="ziel"]').text("Capital Bern")
 		model.set('price', 4.60);
 	}
 
 	if (ziel == 4){
-		$('[data-bind="ziel"]').text("Zürich HB")
+		$('[data-bind="ziel"]').text("St. Gallen")
 		model.set('price', 6.10);
 	}
 
 	if (ziel == 5){
-		$('[data-bind="ziel"]').text("Dietikon")
+		$('[data-bind="ziel"]').text("Interlaken")
 		model.set('price', 29.20);
 	}
 
 
 	if (ziel == 6){
-		$('[data-bind="ziel"]').text("Würenlos")
+		$('[data-bind="ziel"]').text("Scuol Tarasp")
 		model.set('price', 41.30);
 	}
 
 	if (ziel == 7){
-		$('[data-bind="ziel"]').text("Neuenhof")
+		$('[data-bind="ziel"]').text("Schaffhausen")
 		model.set('price', 39.90);
 	}
 
 	if (ziel == 8){
-		$('[data-bind="ziel"]').text("Bern")
+		$('[data-bind="ziel"]').text("Geneva")
 		model.set('price', 1.20);
 	}
 
@@ -307,22 +308,22 @@ var updatePrice = function() {
 
 
 	var voll = model.get('volleTickets')
-	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
+	$('[data-bind="voll1"]').text(voll + "x Full Price")
 
 	var halb = model.get('halbeTickets')
-	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
+	$('[data-bind="halb1"]').text(halb + "x Reduced")
 
 	var anzahl = voll+halb
 	$('[data-bind="anzahl"]').text(anzahl + "x")
 
 	var nachtx = model.get('nachtTickets');
-	$('[data-bind="nacht1"]').text(nachtx + "x Nachtzuschlag")
+	$('[data-bind="nacht1"]').text(nachtx + "x Nightticket")
 
 	var velox = model.get('veloTickets');
-	$('[data-bind="velo1"]').text(velox + "x Veloticket")
+	$('[data-bind="velo1"]').text(velox + "x Bike Ticket")
 
 	var hundx = model.get('hundTickets');
-	$('[data-bind="hund1"]').text(hundx + "x Hundticket")
+	$('[data-bind="hund1"]').text(hundx + "x Dog Ticket")
 
 	
 
@@ -510,6 +511,8 @@ if (model.get('hundTickets') == undefined) {
 } else {
 	model.set('hundTickets', parseInt(model.get('hundTickets')), 10)
 }
+
+
 
 
 

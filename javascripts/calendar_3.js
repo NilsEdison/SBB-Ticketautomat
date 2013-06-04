@@ -34,43 +34,45 @@ $('[data-my-special-link]').on('click', function(evt) {
 
 
 
+// Ziel definieren
+
 	if (ziel == 1){
-		$('[data-bind="ziel"]').text("Turgi");
+		$('[data-bind="ziel"]').text("Zürich Mainstation");
 		model.set('price', 10.20);
 	}
 
 	if (ziel == 2){
-		$('[data-bind="ziel"]').text("Baden")
+		$('[data-bind="ziel"]').text("Zürich Airport")
 		model.set('price', 16.40);
 	}
 
 	if (ziel == 3){
-		$('[data-bind="ziel"]').text("Brugg")
+		$('[data-bind="ziel"]').text("Capital Bern")
 		model.set('price', 4.60);
 	}
 
 	if (ziel == 4){
-		$('[data-bind="ziel"]').text("Zürich HB")
+		$('[data-bind="ziel"]').text("St. Gallen")
 		model.set('price', 6.10);
 	}
 
 	if (ziel == 5){
-		$('[data-bind="ziel"]').text("Dietikon")
+		$('[data-bind="ziel"]').text("Interlaken")
 		model.set('price', 29.20);
 	}
 
 
 	if (ziel == 6){
-		$('[data-bind="ziel"]').text("Würenlos")
+		$('[data-bind="ziel"]').text("Scuol Tarasp")
 		model.set('price', 41.30);
 	}
 
 	if (ziel == 7){
-		$('[data-bind="ziel"]').text("Neuenhof")
+		$('[data-bind="ziel"]').text("Schaffhausen")
 		model.set('price', 39.90);
 	}
 
 	if (ziel == 8){
-		$('[data-bind="ziel"]').text("Bern")
+		$('[data-bind="ziel"]').text("Geneva")
 		model.set('price', 1.20);
 	}
