@@ -190,7 +190,10 @@ margin-top: 7px;
 .mln, .mhn, .man {
   margin-left: 0px;
 }
-
+.mhelp{
+  margin-left: 500px;
+  padding-top: 20px;
+}
 .mlx, .mhx, .max {
   margin-left: 5px;
 }
@@ -214,3 +217,4 @@ margin-top: 7px;
 .mtl_h {
   margin-top: 45px;
 }
+
