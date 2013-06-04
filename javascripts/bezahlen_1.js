@@ -72,6 +72,11 @@ var updatePrice = function() {
 
 //Via definieren
 
+	if (via == 0){
+		$('[data-bind="via"]').text("direkt")
+	}
+
+
 	if (via == 1){
 		$('[data-bind="via"]').text("Brugg")
 	}
@@ -268,9 +273,9 @@ var updatePrice = function() {
 	
 
 	var nachtpreis = (5)*nachtx
-	var velopreis = (price/3)*velox
+	var velopreis = (12)*velox
 
-	var hundpreis = (price/4)*hundx
+	var hundpreis = (price/2)*hundx
 
 	var pricetot = (a+b+nachtpreis+velopreis+hundpreis)
 	var pricetoteuro = (pricetot*EURO)
@@ -403,7 +408,7 @@ if (model.get('date') == undefined) {
 }
 
 if (model.get('via') == undefined) {
-	model.set('via', 1);
+	model.set('via', 0);
 }
 
 
@@ -439,10 +444,6 @@ if (model.get('hundTickets') == undefined) {
 } else {
 	model.set('hundTickets', parseInt(model.get('hundTickets')), 10)
 }
-
-
-
-
 
 
 
