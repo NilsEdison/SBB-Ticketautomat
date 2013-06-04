@@ -47,37 +47,35 @@ $('[data-my-special-link]').on('click', function(evt) {
   // Der Browser liest jetzt das modifizierte «href»-Attribut und öffnet die neue Seite
 });
 
-
-
-if (ziel == 1){
+	if (ziel == 1){
 		$('[data-bind="ziel"]').text("Turgi");
-		model.set('price', 42);
+		model.set('price', 10.20);
 	}
 
 	if (ziel == 2){
 		$('[data-bind="ziel"]').text("Baden")
-		model.set('price', 50);
+		model.set('price', 16.40);
 	}
 
 	if (ziel == 3){
 		$('[data-bind="ziel"]').text("Brugg")
-		model.set('price', 13);
+		model.set('price', 4.60);
 	}
 
 	if (ziel == 4){
 		$('[data-bind="ziel"]').text("Zürich HB")
-		model.set('price', 56);
+		model.set('price', 6.10);
 	}
 
 	if (ziel == 5){
 		$('[data-bind="ziel"]').text("Dietikon")
-		model.set('price', 6);
+		model.set('price', 29.20);
 	}
 
 
 	if (ziel == 6){
 		$('[data-bind="ziel"]').text("Würenlos")
-		model.set('price', 2.30);
+		model.set('price', 41.30);
 	}
 
 	if (ziel == 7){
@@ -87,5 +85,5 @@ if (ziel == 1){
 
 	if (ziel == 8){
 		$('[data-bind="ziel"]').text("Bern")
-		model.set('price', 2340);
+		model.set('price', 1.20);
 	}
