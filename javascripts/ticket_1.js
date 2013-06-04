@@ -463,6 +463,9 @@ var updatePrice = function() {
 
 
 
+// if (nachtx == 0 && velox == 0 && hundx == 0){
+// $('[data-bind="test"]').text("")
+// }
 
 if (halb >= 1){
 		$('[data-bind="show_halb"]').show()
