@@ -13,9 +13,6 @@
 </head>
 
 
-<body onload="setInterval('updateClock()', 200);">
-
-<!-- Header -->
 
 <body onload="setInterval('updateClock()', 200);">
 
@@ -62,7 +59,7 @@
  <div class="col1of2 m8-left">
      
       <div class="col1of2 m8-top"> 
-        <div class="btn-4of10 txt-gray">
+        <div class="btn-7of10 txt-gray">
           <p class="txt-small">Ticket Information</p>
           <p class="txt-small">via</p>
           <p class="txt-middle" data-bind="via"></p>
@@ -116,126 +113,37 @@
         </div>
       </div>
 
-      <div class="col1of2 m8-top"> 
-        <div class="btn-3of10 info-blue">
-          <p class="txt-small ">Informationsfeld</p>
-          <p class="txt-middle ptl ">Für weitere Informationen klicken Sie auf einen der Informationsbuttons rechts auf dem Bildschirm.</p>
-        </div>
-      </div>
-
+      
 
     </div>
-
 
 <!-- Inhalt rechts-->
-
-  <div class="col1of2 m8-left">
-
-  	   <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 txt-gray" >
-        <p class= "txt-small">hinzufügen von</p>
-        <p class= "txt-large">Nachtzuschlag</p>
-        </div>
-      </div>
-
-       <div class="col1of8 m8-top">
-      <div class="btn-1of10 btn-blue" data-bind="wegNachtTicket">
-        <p class="txt-small">Entfernen</p>
-      <img class="mll mtm" src="Icons/Minus.png"></img>
-      </div>
-    </div>
-
-    <div class="col1of4 m8">
-      <div class="btn-1of10 txt-gray">
-        <p class="txt-small">Anzahl Nachtzuschläge</p>
-        <p class="txt-large" data-bind="nacht1"></p>
-      </div>
-    </div>
-
-    <div class="col1of8 m8">
-      <div class="btn-1of10 btn-blue" data-bind="hinzuNachtTicket">
-        <p class="txt-small">Hinzufügen</p>
-      <img class="mll mtm" src="Icons/Plus.png"></img>
-      </div>  
-     </div>
-
-    <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 txt-gray">
-        <p class="txt-small">hinzufügen von</p>
-        <p class= "txt-large">Velobilette</p>
-        </div>
-      </div>
-
-    <div class="col1of8 m8-top">
-      <div class="btn-1of10 btn-blue"data-bind="wegVeloTicket">
-        <p class="txt-small">weniger</p>
-        <img class="mll mtm" src="Icons/Minus.png"></img>
-      </div>
-    </div>
-
-    <div class="col1of4 m8">
-      <div class="btn-1of10 txt-gray">
-        <p class="txt-small">Anzahl Velobilette</p>
-        <p class= "txt-large" data-bind="velo1"></p>
-      </div>
-    </div>
-
-    <div class="col1of8 m8">
-      <div class="btn-1of10 btn-blue" data-bind="hinzuVeloTicket">
-        <p class="txt-small">mehr</p>
-        <img class="mll mtm" src="Icons/Plus.png"></img>
-      </div>  
-     </div>
+ <div class="col1of2 m8-left">
      
+      <div class="col1of2 m8-top"> 
+        <div class="btn-7of10 info-blue">          
+          <p class="txt-small ">Informationsfeld</p>
+          <p class="txt-middle ptl ">Für weitere Informationen klicken Sie auf einen der Informationsbuttons rechts auf dem Bildschirm.</p>
+        
+          </div>
+      </div>
+
     <div class="col1of2 m8-top"> 
-        <div class="btn-1of10 txt-gray">
-        <p class="txt-small">hinzufügen von</p>
-        <p class= "txt-large">Hundebillette</p>
-        </div>
-      </div>
-
-    <div class="col1of8 m8-top">
-      <div class="btn-1of10 btn-blue" data-bind="wegHundTicket">
-        <p class="txt-small">weniger</p>
-        <img class="mll mtm" src="Icons/Minus.png"></img>
-      </div>
-    </div>
-
-    <div class="col1of4 m8">
-      <div class="btn-1of10 txt-gray">
-        <p class="txt-small">Anzahl Hundebilette</p>
-        <p class= "txt-large"data-bind="hund1"></p>
-      </div>
-    </div>
-
-    <div class="col1of8 m8">
-      <div class="btn-1of10 btn-blue" data-bind="hinzuHundTicket">
-        <p class="txt-small">mehr</p>
-        <img class="mll mtm" src="Icons/Plus.png"></img>
-      </div>  
-     </div>
-
-  </div>
-
-
-
-
-
-
-
-
-      <div class="col1of2 m8"> 
-        <div class="btn-1of10 ">
-        </div>
-      </div>
-
-    <div class="col1of2 m8"> 
+        <a class="white" href="startseite_3.html">
         <div class="btn-1of10 btn-buy">
-        <p class="txt-small">Abschliessen</p>
-        <p class="txt-large"><a class="white" href="ticket_3.html" data-stateful-link>Billet hinzufügen</a></p>
+          <p class="txt-small ">Optional</p>
+          <p class="txt-large white">Print receipt</p>
         </div>
+      </a>
+      </div>
+
+
+    
+
     </div>
 
+
+    
 
 
 
@@ -244,9 +152,9 @@
   <div class="col1of1 m8">
 
     <div class="col1of4 ">
+      <a href="ticket_3.html" data-stateful-link>
       <div class="btn-1of10 navi-gray">
-      <a class="dark" href="ticket_3.html">
-      <p class="txt-small">Zurück</p>
+      <p class="txt-small">Back</p>
       <img class="mll mtm" src="Icons/back.png"></img>
       </a>
       </div>
@@ -255,14 +163,14 @@
     <div class="col1of4 m8-left">
       <div class="btn-1of10 navi-gray">
       <a class="dark" href="startseite_3.html">
-      <p class="txt-small">Abbrechen</p>
+      <p class="txt-small">Cancel</p>
       <img class="mll mtm" src="Icons/cancel.png"></img>
       </div>
     </div>
 
     <div class="col1of2 m8-left">
-      <a href="hilfe_1.html"><div class="btn-1of10 navi-gray" data-stateful-link>
-      <p class="txt-small">Hilfe</p>
+      <a href="hilfe_1.html"><div class="btn-1of10 navi-gray">
+      <p class="txt-small">Help</p>
       <img class="mll mtm" src="Icons/help.png"></img>
       </div></a>
     </div>
@@ -280,7 +188,7 @@
   <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
 
   <!-- Page specific script -->
-  <script type="text/javascript" src="javascripts/zusatze_1.js"></script>
+  <script type="text/javascript" src="javascripts/bezahlen_1.js"></script>
 
 
   <!-- load Clock -->

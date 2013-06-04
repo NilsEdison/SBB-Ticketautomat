@@ -16,145 +16,65 @@ console.log(model.get("hundTickets"));
 
 
 
+var EURO = 0.7;
 
-/**
- * Klasse
- */
 
-// Listener
-var updateKlasse = function() {
-	klasseButtons = $('[data-bind="klasse"]');
-	klasseButtons.each(function(i, button) {
-		var $button = $(button);
-		var klasse = model.get('klasse');
 
-		if ($button.data('value') == klasse) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
 
-model.listen('klasse', updateKlasse);
-
-// Event handling
-$('[data-bind="klasse"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('klasse', $target.data('value'));
+$('[data-bind="hinzuVollesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('volleTickets', model.get('volleTickets') + 1);
 });
 
-// Update
-updateKlasse();
+$('[data-bind="wegVollesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
 
-/**
- * Reduction
- */
-
-// Listener
-var updateReduction = function() {
-	reductionButtons = $('[data-bind="reduction"]');
-	reductionButtons.each(function(i, button) {
-		var $button = $(button);
-		var reduction = model.get('reduction');
-
-		if ($button.data('value') == reduction) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('reduction', updateReduction);
-
-// Event handling
-$('[data-bind="reduction"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('reduction', $target.data('value'));
+	var ticketAnzahl = model.get('volleTickets');
+	if (ticketAnzahl > 1) {
+		model.set('volleTickets', ticketAnzahl - 1);
+	}
 });
 
-// Update
-updateReduction();
 
-
-
-/**
- * OneWay
- */
-
-// Listener
-var updateOneWay = function() {
-	onewayButtons = $('[data-bind="oneway"]');
-	onewayButtons.each(function(i, button) {
-		var $button = $(button);
-		var oneway = model.get('oneway');
-
-		if ($button.data('value') == oneway) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('oneway', updateOneWay);
-
-// Event handling
-$('[data-bind="oneway"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('oneway', $target.data('value'));
+model.listen('volleTickets', function() {
+	var ticketAnzahl = model.get('volleTickets');
+	if (ticketAnzahl < 1) {
+		$('[data-bind="voll1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="voll1"]').text(ticketAnzahl + "x Vollpreis")
+	}
+	updatePrice();
 });
 
-// Update
-updateOneWay();
 
 
 
-/**
- * Zusatze
- */
+// Ermässigt
 
-// Listener
-var updateZusatz = function() {
-	zusatzButtons = $('[data-bind="zusatz"]');
-	zusatzButtons.each(function(i, button) {
-		var $button = $(button);
-		var zusatz = model.get('zusatz');
-
-		if ($button.data('value') == zusatz) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('zusatz', updateZusatz);
-
-// Event handling
-$('[data-bind="zusatz"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('zusatz', $target.data('value'));
+$('[data-bind="hinzuHalbesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+	model.set('halbeTickets', model.get('halbeTickets') + 1);
 });
 
-// Update
-updateZusatz();
+$('[data-bind="wegHalbesTicket"]').on('click', function(evt) {
+	// Ein volles Ticket hinzufügen
+
+	var ticketAnzahla = model.get('halbeTickets');
+	if (ticketAnzahla > 1) {
+		model.set('halbeTickets', ticketAnzahla - 1);
+	}
+});
 
 
-
-/**
- * Price
- */
-
+model.listen('halbeTickets', function() {
+	var ticketAnzahla = model.get('halbeTickets');
+	if (ticketAnzahla < 1) {
+		$('[data-bind="halb1"]').text("hinzufügen")
+	} else {
+		$('[data-bind="halb1"]').text(ticketAnzahla+ "x Ermässigt")
+	}
+	updatePrice();
+});
 
 
 var updatePrice = function() {
@@ -194,28 +114,28 @@ var updatePrice = function() {
 
 	if (oneway == 1){
 		price = price*2;
-		$('[data-bind="oneway1"]').text("Round-trip")
+		$('[data-bind="oneway1"]').text("Retour")
 	}
 
 	if (oneway == 0){
-		$('[data-bind="oneway1"]').text("One Way")
+		$('[data-bind="oneway1"]').text("Einfache Fahrt")
 	}
 
 //Klasse definieren
 
 	if (klasse == 1){
 		price = price*2;
-		$('[data-bind="klasse1"]').text("1. Class")
+		$('[data-bind="klasse1"]').text("1. Klasse")
 	}
 
 	if (klasse == 0){
-		$('[data-bind="klasse1"]').text("2. Class")
+		$('[data-bind="klasse1"]').text("2. Klasse")
 	}
 
 //Via definieren
 
 	if (via == 0){
-		$('[data-bind="via"]').text("direct")
+		$('[data-bind="via"]').text("direkt")
 	}
 
 
@@ -339,43 +259,43 @@ var updatePrice = function() {
 // Ziel definieren
 
 	if (ziel == 1){
-		$('[data-bind="ziel"]').text("Zürich Mainstation");
+		$('[data-bind="ziel"]').text("Turgi");
 		model.set('price', 10.20);
 	}
 
 	if (ziel == 2){
-		$('[data-bind="ziel"]').text("Zürich Airport")
+		$('[data-bind="ziel"]').text("Baden")
 		model.set('price', 16.40);
 	}
 
 	if (ziel == 3){
-		$('[data-bind="ziel"]').text("Capital Bern")
+		$('[data-bind="ziel"]').text("Brugg")
 		model.set('price', 4.60);
 	}
 
 	if (ziel == 4){
-		$('[data-bind="ziel"]').text("St. Gallen")
+		$('[data-bind="ziel"]').text("Zürich HB")
 		model.set('price', 6.10);
 	}
 
 	if (ziel == 5){
-		$('[data-bind="ziel"]').text("Interlaken")
+		$('[data-bind="ziel"]').text("Dietikon")
 		model.set('price', 29.20);
 	}
 
 
 	if (ziel == 6){
-		$('[data-bind="ziel"]').text("Scuol Tarasp")
+		$('[data-bind="ziel"]').text("Würenlos")
 		model.set('price', 41.30);
 	}
 
 	if (ziel == 7){
-		$('[data-bind="ziel"]').text("Schaffhausen")
+		$('[data-bind="ziel"]').text("Neuenhof")
 		model.set('price', 39.90);
 	}
 
 	if (ziel == 8){
-		$('[data-bind="ziel"]').text("Geneva")
+		$('[data-bind="ziel"]').text("Bern")
 		model.set('price', 1.20);
 	}
 
@@ -387,22 +307,22 @@ var updatePrice = function() {
 
 
 	var voll = model.get('volleTickets')
-	$('[data-bind="voll1"]').text(voll + "x Full Price")
+	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
 
 	var halb = model.get('halbeTickets')
-	$('[data-bind="halb1"]').text(halb + "x Reduced")
+	$('[data-bind="halb1"]').text(halb + "x Ermässigt")
 
 	var anzahl = voll+halb
 	$('[data-bind="anzahl"]').text(anzahl + "x")
 
 	var nachtx = model.get('nachtTickets');
-	$('[data-bind="nacht1"]').text(nachtx + "x Nightticket")
+	$('[data-bind="nacht1"]').text(nachtx + "x Nachtzuschlag")
 
 	var velox = model.get('veloTickets');
-	$('[data-bind="velo1"]').text(velox + "x Bike Ticket")
+	$('[data-bind="velo1"]').text(velox + "x Veloticket")
 
 	var hundx = model.get('hundTickets');
-	$('[data-bind="hund1"]').text(hundx + "x Dog Ticket")
+	$('[data-bind="hund1"]').text(hundx + "x Hundticket")
 
 	
 
@@ -590,6 +510,10 @@ if (model.get('hundTickets') == undefined) {
 } else {
 	model.set('hundTickets', parseInt(model.get('hundTickets')), 10)
 }
+
+
+
+
 
 
 
