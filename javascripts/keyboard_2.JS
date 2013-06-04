@@ -2,9 +2,11 @@
 
 $('[data-button="k"]').on('click', function(evt) {
 	// b reinschreiben
-	// liste rechts ortschaften mit b
+	// liste rechts ortschaften mit k
 	$('#searchResult-0').hide();
 	$('#searchResult-r').hide();
+	$('#searchResult-s').hide();
+	$('#searchResult-c').hide();
 	$('#searchResult-k').show();
 	$('#searchText').text("K_");
 
@@ -12,15 +14,39 @@ $('[data-button="k"]').on('click', function(evt) {
 
 $('[data-button="r"]').on('click', function(evt) {
 	// b reinschreiben
-	// liste rechts ortschaften mit b
+	// liste rechts ortschaften mit r
 	$('#searchResult-0').hide();
 	$('#searchResult-k').hide();
+	$('#searchResult-s').hide();
+	$('#searchResult-c').hide();
 	$('#searchResult-r').show();
 	$('#searchText').text("Kr_");
 
 });
 
+$('[data-button="s"]').on('click', function(evt) {
+	// b reinschreiben
+	// liste rechts ortschaften mit s
+	$('#searchResult-0').hide();
+	$('#searchResult-k').hide();
+	$('#searchResult-r').hide();
+	$('#searchResult-c').hide();
+	$('#searchResult-s').show();
+	$('#searchText').text("S_");
 
+});
+
+$('[data-button="c"]').on('click', function(evt) {
+	// b reinschreiben
+	// liste rechts ortschaften mit c
+	$('#searchResult-0').hide();
+	$('#searchResult-k').hide();
+	$('#searchResult-r').hide();
+	$('#searchResult-s').hide();	
+	$('#searchResult-c').show();
+	$('#searchText').text("Sc_");
+
+});
 
 // Verlinkung Via
 $('[data-my-special-link]').on('click', function(evt) {
