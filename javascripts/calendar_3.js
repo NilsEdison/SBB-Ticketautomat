@@ -27,7 +27,7 @@ $('[data-my-special-link]').on('click', function(evt) {
 evt.preventDefault();
 
 	var $target = $(evt.currentTarget);
-	model.set('via', $target.data('value'));
+	model.set('date', $target.data('value'));
 
 
 
