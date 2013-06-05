@@ -14,7 +14,32 @@ console.log(model.get("nachtTickets"));
 console.log(model.get("veloTickets"));
 console.log(model.get("hundTickets"));
 
+var updateQuittung = function() {
+	quittungButtons = $('[data-bind="quittung"]');
+	quittungButtons.each(function(i, button) {
+		var $button = $(button);
+		var quittung = model.get('quittung');
 
+		if ($button.data('value') == quittung) {
+			$button.removeClass('btn-blue');
+			$button.addClass('btn-red');
+		} else {
+			$button.removeClass('btn-red');
+			$button.addClass('btn-blue');
+		}
+	});
+}
+
+model.listen('quittung', updateQuittung);
+
+// Event handling
+$('[data-bind="quittung"]').on('click', function(evt) {
+	var $target = $(evt.currentTarget);
+	model.set('quittung', $target.data('value'));
+});
+
+// Update
+updateQuittung();
 
 var updatePrice = function() {
 
