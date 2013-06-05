@@ -498,6 +498,12 @@ else {
 
 }
 
+if (nachtx == 0 && velox == 0 && hundx == 0) {
+	$('[data-bind="show_leerer_zusatz"]').show();
+} else {
+	$('[data-bind="show_leerer_zusatz"]').hide();
+}
+
 	$('[data-bind="price_chf1"]').text(runden1(a))
 	$('[data-bind="price_chf2"]').text(runden2(b))
 
