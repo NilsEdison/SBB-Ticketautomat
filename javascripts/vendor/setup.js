@@ -15,19 +15,6 @@ $('[data-stateful-link]').on('click', function(evt) {
 
   var appContainer = $('#app-container')
 
-
-  // appContainer.css({position: 'absolute'})
-
-  //  appContainer.animate({
-  //   left: -appContainer.width()
-  // }, {
-  //   duration: 2000,
-  //   complete: function() {
-      
-
-  //     window.location = uri.href();
-  //   }
-  // });
 	console.log("kjhdshf")
 	appContainer.get(0).addEventListener("transitionend", function() {
 		console.log('fini....')

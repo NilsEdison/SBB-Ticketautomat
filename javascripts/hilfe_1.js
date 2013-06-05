@@ -1,9 +1,3 @@
-function goBack()
-  {
-  window.history.back()
-  };
-
-
 console.log(model.get("ziel"));
 console.log(model.get("oneway"));
 console.log(model.get("klasse"));
@@ -19,3 +13,10 @@ console.log(model.get("volleTickets"));
 console.log(model.get("nachtTickets"));
 console.log(model.get("veloTickets"));
 console.log(model.get("hundTickets"));
+
+function goBack()
+  {
+  window.history.back()
+  };
+
+

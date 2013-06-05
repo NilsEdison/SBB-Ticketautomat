@@ -34,6 +34,7 @@ body {
 .tab-nav a.active {
   background: #062087;
   color: #fff;
+
 }
 
 .tab-nav.tab-nav-mini {
@@ -80,10 +81,9 @@ body {
 .ramonsFancyFadeOut {
 
   transition-property: opacity top background;
-  transition-duration: 0.5s;
-
+  transition-duration: 0.2s;
   position: relative;
-  top: -1536px;
+ left: -2048px;
   opacity: 0;
 
 }
