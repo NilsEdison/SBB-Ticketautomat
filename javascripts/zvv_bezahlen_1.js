@@ -15,148 +15,6 @@ console.log(model.get("veloTickets"));
 console.log(model.get("hundTickets"));
 
 
-
-
-/**
- * Klasse
- */
-
-// Listener
-var updateKlasse = function() {
-	klasseButtons = $('[data-bind="klasse"]');
-	klasseButtons.each(function(i, button) {
-		var $button = $(button);
-		var klasse = model.get('klasse');
-
-		if ($button.data('value') == klasse) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('klasse', updateKlasse);
-
-// Event handling
-$('[data-bind="klasse"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('klasse', $target.data('value'));
-});
-
-// Update
-updateKlasse();
-
-/**
- * Reduction
- */
-
-// Listener
-var updateReduction = function() {
-	reductionButtons = $('[data-bind="reduction"]');
-	reductionButtons.each(function(i, button) {
-		var $button = $(button);
-		var reduction = model.get('reduction');
-
-		if ($button.data('value') == reduction) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('reduction', updateReduction);
-
-// Event handling
-$('[data-bind="reduction"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('reduction', $target.data('value'));
-});
-
-// Update
-updateReduction();
-
-
-
-/**
- * OneWay
- */
-
-// Listener
-var updateOneWay = function() {
-	onewayButtons = $('[data-bind="oneway"]');
-	onewayButtons.each(function(i, button) {
-		var $button = $(button);
-		var oneway = model.get('oneway');
-
-		if ($button.data('value') == oneway) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('oneway', updateOneWay);
-
-// Event handling
-$('[data-bind="oneway"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('oneway', $target.data('value'));
-});
-
-// Update
-updateOneWay();
-
-
-
-/**
- * Zusatze
- */
-
-// Listener
-var updateZusatz = function() {
-	zusatzButtons = $('[data-bind="zusatz"]');
-	zusatzButtons.each(function(i, button) {
-		var $button = $(button);
-		var zusatz = model.get('zusatz');
-
-		if ($button.data('value') == zusatz) {
-			$button.removeClass('btn-blue');
-			$button.addClass('btn-red');
-		} else {
-			$button.removeClass('btn-red');
-			$button.addClass('btn-blue');
-		}
-	});
-}
-
-model.listen('zusatz', updateZusatz);
-
-// Event handling
-$('[data-bind="zusatz"]').on('click', function(evt) {
-	var $target = $(evt.currentTarget);
-	model.set('zusatz', $target.data('value'));
-});
-
-// Update
-updateZusatz();
-
-
-
-/**
- * Price
- */
-
-
-
 var updatePrice = function() {
 
 	var price = (model.get('price'))
@@ -192,14 +50,7 @@ var updatePrice = function() {
 
 // Retour definieren
 
-	if (oneway == 1){
-		price = price*2;
-		$('[data-bind="oneway1"]').text("Retour")
-	}
 
-	if (oneway == 0){
-		$('[data-bind="oneway1"]').text("Einfache Fahrt")
-	}
 
 //Klasse definieren
 
@@ -212,34 +63,11 @@ var updatePrice = function() {
 		$('[data-bind="klasse1"]').text("2. Klasse")
 	}
 
-//Via definieren
-
-	if (via == 0){
-		$('[data-bind="via"]').text("direkt")
-	}
-
-
-	if (via == 1){
-		$('[data-bind="via"]').text("Lachen")
-	}
-
-	if (via == 2){
-		$('[data-bind="via"]').text("Ziegelbrücke")
-	}
-
-	if (via == 3){
-		$('[data-bind="via"]').text("Basel")
-	}
-
-	if (via == 4){
-		$('[data-bind="via"]').text("Chur")
-	}
 
 	
 
 //Datum definieren
-
-	if (date == 4){
+if (date == 4){
 		$('[data-bind="date"]').text("07.06.13")
 	}
 
@@ -339,64 +167,36 @@ var updatePrice = function() {
 // Ziel definieren
 
 	if (ziel == 1){
-		$('[data-bind="ziel"]').text("Genf");
-		model.set('price', 10.20);
+		$('[data-bind="ziel"]').text("Kurzstrecke");
+		model.set('price', 2.30);
 	}
 
 	if (ziel == 2){
-		$('[data-bind="ziel"]').text("Baden")
-		model.set('price', 16.40);
+		$('[data-bind="ziel"]').text("Einzelticket")
+		model.set('price', 3.80);
 	}
 
 	if (ziel == 3){
-		$('[data-bind="ziel"]').text("Biel")
-		model.set('price', 4.60);
-	}
-
-	if (ziel == 4){
-		$('[data-bind="ziel"]').text("Olten")
-		model.set('price', 6.10);
-	}
-
-	if (ziel == 5){
-		$('[data-bind="ziel"]').text("Luzern")
-		model.set('price', 29.20);
+		$('[data-bind="ziel"]').text("Tageskarte")
+		model.set('price', 8.50);
 	}
 
 
-	if (ziel == 6){
-		$('[data-bind="ziel"]').text("Lugano")
-		model.set('price', 41.30);
+
+	if (oneway == 1){
+		price = price*2;
+		$('[data-bind="oneway1"]').text("Gültig für 24h")
 	}
 
-	if (ziel == 7){
-		$('[data-bind="ziel"]').text("Basel")
-		model.set('price', 39.90);
+	if (oneway == 0){
+		
+		$('[data-bind="oneway1"]').text("Gültig für 1h")
 	}
-
-	if (ziel == 8){
-		$('[data-bind="ziel"]').text("Bern")
-		model.set('price', 1.20);
-	}
-
-	if (ziel == 9){
-		$('[data-bind="ziel"]').text("Scuol-Tarasp")
-		model.set('price', 1.20);
-	}
-
-	if (ziel == 10){
-		$('[data-bind="ziel"]').text("Kreuzlingen")
-		model.set('price', 1.20);
-	}
-
 
 
 // neuer Wert anzeigen
 
-
-
-
-	var voll = model.get('volleTickets')
+var voll = model.get('volleTickets')
 	$('[data-bind="voll1"]').text(voll + "x Vollpreis")
 
 	var halb = model.get('halbeTickets')
@@ -600,6 +400,7 @@ if (model.get('hundTickets') == undefined) {
 } else {
 	model.set('hundTickets', parseInt(model.get('hundTickets')), 10)
 }
+
 
 
 
