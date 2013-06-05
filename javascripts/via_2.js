@@ -54,11 +54,9 @@ evt.preventDefault();
 
 });
 
+// Ziel definieren
 
-
-	// Ziel definieren
-
-			if (ziel == 1){
+		if (ziel == 1){
 		$('[data-bind="ziel"]').text("Genf");
 		model.set('price', 10.20);
 	}
@@ -108,4 +106,4 @@ evt.preventDefault();
 		$('[data-bind="ziel"]').text("Kreuzlingen")
 		model.set('price', 41.20);
 	}
-
+	

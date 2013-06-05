@@ -104,20 +104,22 @@ var updatePrice = function() {
 
 
 	if (via == 1){
-		$('[data-bind="via"]').text("Brugg")
+		$('[data-bind="via"]').text("Lachen")
 	}
 
 	if (via == 2){
-		$('[data-bind="via"]').text("Aarau")
+		$('[data-bind="via"]').text("Ziegelbrücke")
 	}
 
 	if (via == 3){
-		$('[data-bind="via"]').text("Zürich HB")
+		$('[data-bind="via"]').text("Basel")
 	}
 
 	if (via == 4){
 		$('[data-bind="via"]').text("Chur")
 	}
+
+	
 
 	
 

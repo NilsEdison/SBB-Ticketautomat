@@ -12,7 +12,7 @@ console.log(model.get("halbeTickets"));
 console.log(model.get("volleTickets"));
 console.log(model.get("nachtTickets"));
 console.log(model.get("veloTickets"));
-console.log(model.get("hundTickets"));
+console.log(model.get("hundTickets"));;
 
 
 
@@ -25,6 +25,12 @@ $('[data-my-special-link]').on('click', function(evt) {
 	// URL des Links auslesen (wo geht es jetzt dann gleich hin?
 
 evt.preventDefault();
+
+	var $target = $(evt.currentTarget);
+	model.set('via', $target.data('value'));
+
+
+
 
 
   var uri = new URI(evt.currentTarget.href);
@@ -49,7 +55,7 @@ evt.preventDefault();
 });
 
 
-
+// Ziel definieren
 
 		if (ziel == 1){
 		$('[data-bind="ziel"]').text("Genf");
@@ -101,4 +107,4 @@ evt.preventDefault();
 		$('[data-bind="ziel"]').text("Kreuzlingen")
 		model.set('price', 41.20);
 	}
-
+	

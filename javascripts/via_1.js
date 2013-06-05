@@ -54,8 +54,7 @@ evt.preventDefault();
 
 });
 
-
-
+// Ziel definieren
 
 	if (ziel == 1){
 		$('[data-bind="ziel"]').text("Turgi");
