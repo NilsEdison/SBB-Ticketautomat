@@ -251,7 +251,7 @@
 
       <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-red">
-        <p class="txt-small">Anzahl Billette</p>
+        <p class="txt-small">Anzahl Bilette</p>
         <p class="txt-large" data-bind="anzahl"></p>
         </div>
       </div>
@@ -267,9 +267,9 @@
         <a class="white" >
         <p class="txt-small">Zusätze hinzugefügt</p>
            <img class="mll mtm" src="Icons/minus.png" data-bind="show_leerer_zusatz"/>        
-           <img class="mll mtm" src="Icons/mond.png" data-bind="show_nacht"></img>
-           <img class="mll mtm" src="Icons/velo.png" data-bind="show_velo"></img>
-           <img class="mll mtm" src="Icons/hund.png"data-bind="show_hund"></img>
+           <img class="mll mtm" src="Icons/mond.png" data-bind="show_nacht">
+           <img class="mll mtm" src="Icons/velo.png" data-bind="show_velo">
+           <img class="mll mtm" src="Icons/hund.png"data-bind="show_hund">
         </div>
       </a>
       </div>
@@ -337,13 +337,12 @@
         </div></a>
       </div>
 
-      <div class="colof8a m8-top">
-      <a href="calendar_2.html" class="white" data-stateful-link> 
+      <div class="colof8a m8-top"> 
         <div class="btn-1of10 btn-blue">
-        <p class="txt-small white">Datum ändern</p>
+        <a href="calendar_2.html" class="white" data-stateful-link>
+        <p class="txt-small white">gültig am</p>
         <img class="txt-large" src="Icons/cal.png"></img>
         </div>
-      </a>
       </div>
 
       <div class="colof8b m8"> 
@@ -353,12 +352,12 @@
       </div>
 
       <div class="colof8a m8-top"> 
+        <div class="btn-1of10 btn-blue">
         <a href="vollpreis_2.html" class="white" data-stateful-link>
-        <div class="btn-1of10 btn-blue"> 
         <p class="txt-small white">Anzahl Bilette</p>
         <img class="txt-large" src="Icons/mehr.png"></img>
-        </div>
         </a>
+        </div>
       </div>
 
       <div class="colof8b m8"> 
@@ -391,7 +390,7 @@
 
         <p class="txt-small white">Abschliessen</p>
 
-        <p class="txt-large white">Billett kaufen</p>
+        <p class="txt-large white">Billet kaufen</p>
 
 
         </div>
@@ -406,17 +405,18 @@
   <div class="col1of1 m8">
 
     <div class="col1of4 ">
-      <a class="dark" href="sbb_verbindung_2.html">
       <div class="btn-1of10 navi-gray">
+      <a class="dark" href="sbb_verbindung_2.html">
       <p class="txt-small">Zurück</p>
       <img class="mll mtm" src="Icons/back.png"></img>
-      </div>
       </a>
+      </div>
     </div>
 
     <div class="col1of4 m8-left">
        <a class="dark" href="startseite_2.html">
       <div class="btn-1of10 navi-gray">
+     
       <p class="txt-small">Abbrechen</p>
       <img class="mll mtm" src="Icons/cancel.png"></img>
       </div>
@@ -424,9 +424,11 @@
     </div>
 
     <div class="col1of2 m8-left">
-        <a class="dark" href="hilfe_1.html"data-stateful-link>
+      
+      <a class="dark" href="hilfe_1.html"><div class="btn-1of10 navi-gray">
+      
         <div class="btn-1of10 navi-gray">
-         
+          <a class="dark" href="hilfe_1.html"data-stateful-link>
       <p class="txt-small">Hilfe</p>
       <img class="mll mtm" src="Icons/help.png"></img>
       </div>

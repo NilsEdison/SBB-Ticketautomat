@@ -337,6 +337,7 @@ var updatePrice = function() {
 
 
 // Ziel definieren
+
 		if (ziel == 1){
 		$('[data-bind="ziel"]').text("Genf");
 		model.set('price', 10.20);
@@ -387,6 +388,7 @@ var updatePrice = function() {
 		$('[data-bind="ziel"]').text("Kreuzlingen")
 		model.set('price', 41.20);
 	}
+	
 
 
 // neuer Wert anzeigen
