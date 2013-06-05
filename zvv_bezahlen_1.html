@@ -12,9 +12,6 @@
   <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
 </head>
 
-<script type="text/javascript">
-window.setTimeout('location.href="danke.html"', 12000);
-</script>
 
 <body onload="setInterval('updateClock()', 200);">
 
@@ -24,23 +21,10 @@ window.setTimeout('location.href="danke.html"', 12000);
 
     <div class="col1of1 m7">
 
-      <div class="col1of4 ">
+      <div class="col3of4 ">
         <div class="btn-1of10 navi-gray">
-        <p class="txt-small">Ihr aktueller Standort</p>
-        <p class="txt-large">Zürich HB</p>
-        </div>
-     </div>
-
-      <div class="col1of4 m8-left">
-       <div class="btn-1of10 navi-gray">
-       <p class="txt-small">Ihr Reiseziel</p>
-       <p class="txt-large" data-bind="ziel"></p>
-       </div>
-     </div>
-
-     <div class="col1of4 m8-left">
-        <div class="btn-1of10 navi-gray">
-      
+        <p class="txt-small">Ihr Auswahl</p>
+        <p class="txt-large"data-bind="ziel"></p>
         </div>
      </div>
 
@@ -123,18 +107,23 @@ window.setTimeout('location.href="danke.html"', 12000);
  <div class="col1of2 m8-left">
      
       <div class="col1of2 m8-top"> 
-        <div class="btn-7of10 info-blue">          
+        <div class="btn-3of10 info-blue">          
           <p class="txt-small ">Informationsfeld</p>
-          <p class="txt-middle ptl ">Für weitere Informationen klicken Sie auf einen der Informationsbuttons rechts auf dem Bildschirm.</p>
-        
-          </div>
-      </div>
+          <p class="txt-middle ptl prl ">Bitte werfen Sie den unten links angezeigten Betrag korrekt ein oder benutzen Sie den Kartenleser für Kredit- und Debitkarten. Herzlichen Dank</p>
+        </div>
+            <div class="btn-4of10 info-blue m8-top">
+                  <div class="txt-small">Zahlungsmöglichkeiten</div>
+                  <img class="right prl " src="Icons/zahlungsmoeglichkeiten.png"/>
+                </div>
+            </div>
 
     <div class="col1of2 m8-top"> 
+        <a class="white" href="startseite_1.html">
         <div class="btn-1of10 btn-buy">
           <p class="txt-small ">Optional</p>
           <p class="txt-large white">Quittung drucken</p>
         </div>
+      </a>
       </div>
 
 
@@ -152,7 +141,7 @@ window.setTimeout('location.href="danke.html"', 12000);
   <div class="col1of1 m8">
 
     <div class="col1of4 ">
-      <a href="ticket_2.html" class="dark" data-stateful-link>
+      <a href="zvv_ticket_1.html" class="dark" data-stateful-link>
       <div class="btn-1of10 navi-gray">
       <p class="txt-small">Zurück</p>
       <img class="mll mtm" src="Icons/back.png"></img>
@@ -162,7 +151,7 @@ window.setTimeout('location.href="danke.html"', 12000);
 
     <div class="col1of4 m8-left">
       <div class="btn-1of10 navi-gray">
-      <a class="dark" href="startseite_2.html">
+      <a class="dark" href="startseite_1.html">
       <p class="txt-small">Abbrechen</p>
       <img class="mll mtm" src="Icons/cancel.png"></img>
       </div>
@@ -188,7 +177,7 @@ window.setTimeout('location.href="danke.html"', 12000);
   <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
 
   <!-- Page specific script -->
-  <script type="text/javascript" src="javascripts/bezahlen_2.js"></script>
+  <script type="text/javascript" src="javascripts/zvv_bezahlen_1.js"></script>
 
 
   <!-- load Clock -->
