@@ -66,6 +66,16 @@
   background-color: rgb(157,26,54);
 }
 
+.btn-qui{
+  color: white;
+  background-color: rgb(86,99,115);
+}
+
+.btn-qui:active{
+  color: white;
+  background-color: rgb(157,26,54);
+}
+
 .navi-gray{
   color: rgb(87,94,105);
   background-color: rgb(234,234,234);
