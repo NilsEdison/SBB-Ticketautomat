@@ -76,6 +76,19 @@ body {
 }
 
 
+
+.ramonsFancyFadeOut {
+
+  transition-property: opacity top background;
+  transition-duration: 0.5s;
+
+  position: relative;
+  top: -1536px;
+  opacity: 0;
+
+}
+
+
 /**
  * Inhalt
  */

@@ -12,12 +12,18 @@ body {
 
 
 #app-container {
-  border: 1px solid #ccc;
   height: 748px;
-  margin-left: -512px;
-  position: absolute; left: 50%;
   width: 1024px;
+}
 
+.app-container-layout {
+    transition-property: left;
+  transition-duration: 1s;
+
+  border: 1px solid #ccc;
+  position: absolute;
+  left: 50%;
+  margin-left: -512px;
 }
 
 #header{
@@ -50,4 +56,14 @@ body {
   padding: 12px 2px;
   height: 60px;
   margin-top: 5px;
+}
+
+
+.ramonsFancyFadeOut {
+
+  transition-property: left;
+  transition-duration: 1s;
+  left: -1024px;
+
+  background: #f00;
 }
