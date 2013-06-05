@@ -54,10 +54,6 @@ evt.preventDefault();
 
 });
 
-
-
-
-
 // Ziel definieren
 
 	if (ziel == 1){
