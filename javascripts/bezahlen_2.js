@@ -222,7 +222,7 @@ var updatePrice = function() {
 
 // Ziel definieren
 
-	if (ziel == 1){
+		if (ziel == 1){
 		$('[data-bind="ziel"]').text("Genf");
 		model.set('price', 10.20);
 	}
@@ -260,17 +260,17 @@ var updatePrice = function() {
 
 	if (ziel == 8){
 		$('[data-bind="ziel"]').text("Bern")
-		model.set('price', 1.20);
+		model.set('price', 53.20);
 	}
 
 	if (ziel == 9){
 		$('[data-bind="ziel"]').text("Scuol-Tarasp")
-		model.set('price', 1.20);
+		model.set('price', 11.20);
 	}
 
 	if (ziel == 10){
 		$('[data-bind="ziel"]').text("Kreuzlingen")
-		model.set('price', 1.20);
+		model.set('price', 41.20);
 	}
 
 

@@ -291,9 +291,8 @@ var updatePrice = function() {
 
 
 // Ziel definieren
-
-	if (ziel == 1){
-		$('[data-bind="ziel"]').text("Turgi");
+		if (ziel == 1){
+		$('[data-bind="ziel"]').text("Genf");
 		model.set('price', 10.20);
 	}
 
@@ -303,36 +302,45 @@ var updatePrice = function() {
 	}
 
 	if (ziel == 3){
-		$('[data-bind="ziel"]').text("Brugg")
+		$('[data-bind="ziel"]').text("Biel")
 		model.set('price', 4.60);
 	}
 
 	if (ziel == 4){
-		$('[data-bind="ziel"]').text("Zürich HB")
+		$('[data-bind="ziel"]').text("Olten")
 		model.set('price', 6.10);
 	}
 
 	if (ziel == 5){
-		$('[data-bind="ziel"]').text("Dietikon")
+		$('[data-bind="ziel"]').text("Luzern")
 		model.set('price', 29.20);
 	}
 
 
 	if (ziel == 6){
-		$('[data-bind="ziel"]').text("Würenlos")
+		$('[data-bind="ziel"]').text("Lugano")
 		model.set('price', 41.30);
 	}
 
 	if (ziel == 7){
-		$('[data-bind="ziel"]').text("Neuenhof")
+		$('[data-bind="ziel"]').text("Basel")
 		model.set('price', 39.90);
 	}
 
 	if (ziel == 8){
 		$('[data-bind="ziel"]').text("Bern")
-		model.set('price', 1.20);
+		model.set('price', 53.20);
 	}
 
+	if (ziel == 9){
+		$('[data-bind="ziel"]').text("Scuol-Tarasp")
+		model.set('price', 11.20);
+	}
+
+	if (ziel == 10){
+		$('[data-bind="ziel"]').text("Kreuzlingen")
+		model.set('price', 41.20);
+	}
 
 
 // neuer Wert anzeigen
