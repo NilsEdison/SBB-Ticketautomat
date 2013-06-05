@@ -15,7 +15,7 @@ $('[data-bind="wegVollesTicket"]').on('click', function(evt) {
 	// Ein volles Ticket hinzufügen
 
 	var ticketAnzahl = model.get('volleTickets');
-	if (ticketAnzahl > 1) {
+	if (ticketAnzahl >= 1) {
 		model.set('volleTickets', ticketAnzahl - 1);
 	}
 });

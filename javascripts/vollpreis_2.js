@@ -30,7 +30,7 @@ $('[data-bind="wegVollesTicket"]').on('click', function(evt) {
 	// Ein volles Ticket hinzufügen
 
 	var ticketAnzahl = model.get('volleTickets');
-	if (ticketAnzahl > 1) {
+	if (ticketAnzahl >= 1) {
 		model.set('volleTickets', ticketAnzahl - 1);
 	}
 });
@@ -60,7 +60,7 @@ $('[data-bind="wegHalbesTicket"]').on('click', function(evt) {
 	// Ein volles Ticket hinzufügen
 
 	var ticketAnzahla = model.get('halbeTickets');
-	if (ticketAnzahla > 1) {
+	if (ticketAnzahla >= 1) {
 		model.set('halbeTickets', ticketAnzahla - 1);
 	}
 });

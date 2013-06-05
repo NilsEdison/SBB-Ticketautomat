@@ -31,7 +31,7 @@ $('[data-bind="wegNachtTicket"]').on('click', function(evt) {
 	// Ein volles Ticket hinzufügen
 
 	var ticketnacht = model.get('nachtTickets');
-	if (ticketnacht > 1) {
+	if (ticketnacht >= 1) {
 		model.set('nachtTickets', ticketnacht - 1);
 	}
 });
@@ -61,7 +61,7 @@ $('[data-bind="wegVeloTicket"]').on('click', function(evt) {
 	// Ein volles Ticket hinzufügen
 
 	var ticketvelo = model.get('veloTickets');
-	if (ticketvelo > 1) {
+	if (ticketvelo >= 1) {
 		model.set('veloTickets', ticketvelo - 1);
 	}
 });
@@ -89,7 +89,7 @@ $('[data-bind="wegHundTicket"]').on('click', function(evt) {
 	// Ein volles Ticket hinzufügen
 
 	var tickethund = model.get('hundTickets');
-	if (tickethund > 1) {
+	if (tickethund >= 1) {
 		model.set('hundTickets', tickethund - 1);
 	}
 });
