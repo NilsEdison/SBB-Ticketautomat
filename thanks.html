@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ticketautomat</title>
+  <link rel="stylesheet" href="css/reset.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/grid.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/spaces.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/styleguide.css" media="all" type="text/css" />
+  <link rel="stylesheet" href="css/style2.css" media="all" type="text/css" />
+  <!-- Eigene Stile -->
+  <link rel="stylesheet" href="css/app.css" media="all" type="text/css" />
+</head>
+
+<script type="text/javascript">
+window.setTimeout('location.href="Startseite_3.html"', 3000);
+</script>
+
+<body onload="setInterval('updateClock()', 200);">
+
+<!-- Header -->
+
+  <div id="app-container" class="app-container-layout">
+
+    <div class="col1of1 m7">
+
+      <div class="col3of4">
+        <div class="btn-1of10 navi-gray">
+          <img class="mlm mts" src="Icons/sbb.png"></img>
+        </div>
+     </div>
+
+
+
+
+      <div class="col1of4 m8-left">
+       <div class="btn-1of10 navi-gray">
+       <p class="txt-small">Aktuelle Uhrzeit</p>
+       <p class="txt-large"id="clock"></p>
+       </div>
+     </div>
+  </div>
+
+
+<!-- Inhalt links-->
+<div class="col1of1 m8 txt-gray"> 
+
+  <div class="btn-8of10 txt-gray">
+  <p class="txt-large-danke by-center">Thank you for your purchase.</p>
+  <p class="txt-large by-center">We wish you a pleasant journey.</p>
+  <p class="txt-large-weiter by-center">You will be redirected to the home screen.</p> 
+  </div>  
+</div>
+<!-- Navi -->
+
+  <div class="col1of1 m8">
+      <div class="btn-1of10 navi-gray">
+      </div>
+
+  </div>
+
+  
+  </div>
+
+
+  <script type="text/javascript" src="javascripts/vendor/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/urijs/uri.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/simple-model/simple-model.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/setup.js"></script>
+
+
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script>
+
+  <!-- load Clock -->
+  <!--http://www.tristanwaddington.com/2010/08/javascript-clock/-->
+
+  <script type="text/javascript">
+            // This function gets the current time and injects it into the DOM
+            function updateClock() {
+                // Gets the current time
+                var now = new Date();
+ 
+                // Get the hours, minutes and seconds from the current time
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+
+ 
+                // Format hours, minutes and seconds
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+
+                }
+ 
+                // Gets the element we want to inject the clock into
+                var elem = document.getElementById('clock');
+ 
+                // Sets the elements inner HTML value to our clock data
+                elem.innerHTML = hours + ':' + minutes;
+            }
+        </script>
+
+</body>
+</html>
