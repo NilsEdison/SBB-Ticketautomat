@@ -351,10 +351,10 @@ var voll = model.get('volleTickets')
 	$('[data-bind="nacht1"]').text(nachtx + "x Nachtzuschlag")
 
 	var velox = model.get('veloTickets');
-	$('[data-bind="velo1"]').text(velox + "x Veloticket")
+	$('[data-bind="velo1"]').text(velox + "x Velobillet")
 
 	var hundx = model.get('hundTickets');
-	$('[data-bind="hund1"]').text(hundx + "x Hundticket")
+	$('[data-bind="hund1"]').text(hundx + "x Hundbillett")
 
 	
 
