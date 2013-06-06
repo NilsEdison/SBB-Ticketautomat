@@ -314,7 +314,7 @@ if (date == 4){
 	}
 
 	if (ziel == 2){
-		$('[data-bind="ziel"]').text("Einzelticket")
+		$('[data-bind="ziel"]').text("Einzelbillett")
 		model.set('price', 3.80);
 	}
 
